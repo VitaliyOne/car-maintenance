@@ -53,7 +53,7 @@
 }
 
 .infoFuelСonsumption{
-    margin: 5px 15px;
+    margin: 15px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     grid-column-gap: 40px;

@@ -31,7 +31,7 @@ const InformationCar = () => {
          {sessionNameCar === "" || sessionNameCar === null ? (
             <form className="formInformationCar">
                 <MyInput type="text" placeholder="Ваш авто" value={nameCar} onChange={(event) => setNameCar(event.target.value)}></MyInput>
-                <MyButton children="Сохранить" onClick={saveNameCar}></MyButton>
+                <MyButton children="Сохранить" onClick={saveNameCar} style={{marginLeft: "10px"}}></MyButton>
             </form>) : (
             <div className="formInformationYourCar">
                 <div className="itemFormYourCar1">

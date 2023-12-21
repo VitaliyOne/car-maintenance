@@ -1,6 +1,6 @@
-import FuelСonsumption from "./FuelСonsumption"
+// import FuelСonsumption from "./FuelСonsumption"
+import OilСhange from "./OilСhange"
 import MyButton from "./UI/button/MyButton"
-
 
 const CarMaintenanceMenu = () => {
   return (
@@ -12,7 +12,8 @@ const CarMaintenanceMenu = () => {
         <MyButton children="Техническое обслуживание"></MyButton>
         <MyButton children="Статистика"></MyButton>
       </div>
-        <FuelСonsumption></FuelСonsumption>
+        {/* <FuelСonsumption></FuelСonsumption> */}
+        <OilСhange></OilСhange>
     </div>
   )
 }

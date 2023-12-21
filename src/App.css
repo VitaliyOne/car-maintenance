@@ -61,5 +61,11 @@
     justify-items: center;
 }
 
-
-
+.infoOilСhange{
+    margin: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-column-gap: 40px;
+    grid-row-gap: 10px;
+    justify-items: center;
+}

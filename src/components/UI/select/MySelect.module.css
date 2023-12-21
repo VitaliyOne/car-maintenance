@@ -1,8 +1,17 @@
 .mySelect{
-    padding: 5px 15px;
-    font-size: 14px;
-    padding-left: 3px;
-    border: 1px solid rgba(51, 51, 51, 0.7);
-    border-radius: 4px;
+    font-size: 15px;
+    padding-left: 5px;
+    border: 1px solid rgba(51, 51, 51, 0.2);
+    border-radius: 5px;
     font-family: 'Roboto', sans-serif;
-    } 
+    outline:none;
+    width: calc(110%);
+}
+
+.mySelect:hover{
+    background: rgba(51, 51, 51, 0.2);
+}
+
+.mySelect:focus{
+    background: white;
+}

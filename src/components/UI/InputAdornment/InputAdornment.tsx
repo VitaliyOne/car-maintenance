@@ -3,7 +3,7 @@ import classes from "./InputAdornment.module.css";
 interface InputAdornmentProps extends React.InputHTMLAttributes<HTMLInputElement> {
     placeholder: string;
     type: string;
-    span?: string;
+    span: string;
     value?: string;
   }
 

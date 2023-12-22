@@ -2,6 +2,7 @@ import { useState } from "react"
 import FuelСonsumption from "./FuelСonsumption"
 import OilСhange from "./OilСhange"
 import MyButton from "./UI/button/MyButton"
+import RepairCosts from "./RepairCosts"
 
 const CarMaintenanceMenu = () => {
   const [selectedItem, setSelectedItem] = useState<number>(1)
@@ -14,13 +15,15 @@ const CarMaintenanceMenu = () => {
         <MyButton children="Расходы на ремонт" onClick={() => setSelectedItem(3)}></MyButton>
         <MyButton children="Техническое обслуживание" onClick={() => setSelectedItem(4)}></MyButton>
         <MyButton children="Статистика" onClick={() => setSelectedItem(5)}></MyButton>
+        <MyButton children="Тюнинг" onClick={() => setSelectedItem(6)}></MyButton>
       </div>
       <div>
-        {selectedItem === 1? (<FuelСonsumption/>) : ("")};
-        {selectedItem === 2? (<OilСhange/>) : ("")};
-        {selectedItem === 3? (<div>In the process of development...</div>) : ("")};
-        {selectedItem === 4? (<div>In the process of development...</div>) : ("")};
-        {selectedItem === 5? (<div>In the process of development...</div>) : ("")};
+        {selectedItem === 1? (<FuelСonsumption/>) : ("")}
+        {selectedItem === 2? (<OilСhange/>) : ("")}
+        {selectedItem === 3? (<RepairCosts/>) : ("")}
+        {selectedItem === 4? (<div>In the process of development...</div>) : ("")}
+        {selectedItem === 5? (<div>In the process of development...</div>) : ("")}
+        {selectedItem === 6? (<div>In the process of development...</div>) : ("")}
       </div>
     </div>
   )

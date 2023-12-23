@@ -39,12 +39,6 @@ const CarMaintenanceMenu = () => {
       </div>
       <div>
         <TabComponent />
-        {/* {selectedItem === 1 && (<FuelСonsumption/>)}
-        {selectedItem === 2? (<OilСhange/>) : ("")}
-        {selectedItem === 3? (<RepairCosts/>) : ("")}
-        {selectedItem === 4? (<div>In the process of development...</div>) : ("")}
-        {selectedItem === 5? (<div>In the process of development...</div>) : ("")}
-        {selectedItem === 6? (<div>In the process of development...</div>) : ("")} */}
       </div>
     </div>
   )

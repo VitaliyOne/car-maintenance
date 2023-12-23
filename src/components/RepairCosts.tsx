@@ -16,15 +16,17 @@ const RepairCosts = () => {
     <div>
         <time><img src={OilLamp} alt="OilLamp" style={{height: "30px"}}/> &nbsp;{dateTime}</time>
         <div className="infoOilСhange">
-            <MyInput  placeholder="Вид ремонта" type="text"></MyInput>
-            <MyInput  placeholder="Запчасть" type="text"></MyInput>
-            <MyInput  placeholder="Артикул" type="text"></MyInput>
-            <InputAdornment placeholder="Цена" type="number" span="руб"></InputAdornment>
+            <MyInput placeholder="Вид ремонта" type="text"></MyInput>
+            <MyInput placeholder="Стоимость работ" type="text"></MyInput>
+            <MyInput placeholder="Запчасть" type="text"></MyInput>
+            <MyInput placeholder="Артикул запчасти" type="text"></MyInput>
+            <InputAdornment placeholder="Цена запчасти" type="number" span="руб"></InputAdornment>
             <InputAdornment placeholder="Пробег" type="number" span="км"></InputAdornment>
         </div>
-        <div style={{marginTop: "10px"}}>
-                <MyButton children="Сохранить"></MyButton>
-            </div>
+        <div className="infoOilСhange">
+          <MyInput placeholder="Комментарий" type="text"></MyInput>
+        </div>
+        <MyButton children="Сохранить"></MyButton>
     </div>
   )
 }

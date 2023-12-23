@@ -3,6 +3,7 @@ import tuningIcon from '/public/tuningIcon.png';
 import MyInput from './UI/input/MyInput';
 import MyButton from './UI/button/MyButton';
 import InputAdornment from './UI/InputAdornment/InputAdornment';
+import MyTextarea from './UI/textarea/MyTextarea';
 
 const Tuning = () => {
     const [dateTime, setDateTime] = useState<string>();
@@ -23,7 +24,7 @@ const Tuning = () => {
             <InputAdornment placeholder="Разгон 10-20" type="number" span="сек"></InputAdornment>
         </div>
         <div className="infoOilСhange">
-          <MyInput placeholder="Описание" type="text"></MyInput>
+          <MyTextarea placeholder='Описание'></MyTextarea>
         </div>
         <MyButton children="Сохранить"></MyButton>
     </div>

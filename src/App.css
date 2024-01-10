@@ -47,7 +47,6 @@
     background-color: rgb(255, 255, 255);
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
     border: 1px solid rgb(100, 100, 100);
     border-radius: 8px;
 }
@@ -64,8 +63,27 @@
 .infoOilСhange{
     margin: 15px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     grid-column-gap: 40px;
     grid-row-gap: 10px;
     justify-items: center;
 }
+
+.time{
+    display: inline-block;
+    vertical-align: top; 
+    height: 30px;
+}
+
+select option:hover,
+    select option:focus,
+    select option:active {
+        background: linear-gradient(#000000, #000000);
+        color: #ffed00 !important;
+    }
+
+    select option:checked {
+        background: linear-gradient(#d6d6d6, #d6d6d6);
+        color: #000000 !important;
+    }
+

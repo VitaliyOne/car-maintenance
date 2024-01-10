@@ -60,7 +60,7 @@ const OilСhange = () => {
 
     useEffect(() => {
       const date = new Date();
-      setDateTime(`${date.getDate()}.${date.getMonth()+1}.${date.getFullYear()}`)
+      setDateTime(`${date.getDate()}.${(date.getMonth() + 1).toString().length === 1 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1}.${date.getFullYear()}`)
     }, []);
 
     const getOil = (oilViscosityValue: string) => {
@@ -73,19 +73,19 @@ const OilСhange = () => {
 
   return (
     <div>
-        <time><img src={OilLamp} alt="OilLamp" style={{height: "20px"}}/> &nbsp;{dateTime}</time>
+        <time className="time"><img src={OilLamp} alt="OilLamp" style={{height: "20px"}}/> &nbsp;{dateTime}</time>
         <form style={{marginTop: "10px"}}>
             <div className="infoOilСhange">
                 <InputAdornment placeholder="Пробег" type="number" span="км"></InputAdornment>
-                <MySelect 
+                <MySelect
                     defaultValue="Вязкость масла" 
-                    value={oilViscosityValue} 
-                    option={oilViscosity} 
+                    value={oilViscosityValue}
+                    option={oilViscosity}
                     onChange={(event)=>getOil(event)}>
                     </MySelect>
-                <MySelect 
+                <MySelect
                     defaultValue="Тип масла" 
-                    value={typeOilValue} 
+                    value={typeOilValue}
                     option={typeOil}
                     onChange={(event)=>getTypeOil(event)}>
                 </MySelect>

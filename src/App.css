@@ -74,16 +74,3 @@
     vertical-align: top; 
     height: 30px;
 }
-
-select option:hover,
-    select option:focus,
-    select option:active {
-        background: linear-gradient(#000000, #000000);
-        color: #ffed00 !important;
-    }
-
-    select option:checked {
-        background: linear-gradient(#d6d6d6, #d6d6d6);
-        color: #000000 !important;
-    }
-

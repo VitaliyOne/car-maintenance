@@ -14,7 +14,7 @@ const FuelСonsumption = () => {
     
   return (
     <div>
-        <time><img src={Fuel} alt="Fuel" style={{height: "20px"}}/> &nbsp;{dateTime}</time>
+        <time className="time"><img src={Fuel} alt="Fuel" style={{height: "20px"}}/> &nbsp;{dateTime}</time>
         <form>
             <div className="infoFuelСonsumption">
                 <InputAdornment placeholder="Сумма заправки" type="number" span="руб"></InputAdornment>

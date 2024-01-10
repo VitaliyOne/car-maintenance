@@ -4,12 +4,14 @@ import OilСhange from "./OilСhange"
 import MyButton from "./UI/button/MyButton"
 import RepairCosts from "./RepairCosts"
 import Tuning from "./Tuning"
+import TechnicalMaintenance from "./TechnicalMaintenance"
 
 enum Tab {
   FUEL_CONSUMPTION = 'FUEL_CONSUMPTION',
   OIL_CHANGE = "OIL_CHANGE",
   REPAIR_COSTS = "REPAIR_COSTS",
-  TUNING = "TUNING"
+  TUNING = "TUNING",
+  TECHNICAL_MAINTENANCE = "TECHNICAL_MAINTENANCE"
 }
 
 type TabComponentsMap = {
@@ -20,7 +22,8 @@ const tabs: TabComponentsMap = {
   [Tab.FUEL_CONSUMPTION]: FuelСonsumption,
   [Tab.OIL_CHANGE]: OilСhange,
   [Tab.REPAIR_COSTS]: RepairCosts,
-  [Tab.TUNING]: Tuning
+  [Tab.TUNING]: Tuning,
+  [Tab.TECHNICAL_MAINTENANCE]: TechnicalMaintenance
 }
 
 
@@ -36,7 +39,7 @@ const CarMaintenanceMenu = () => {
         <MyButton children="Расход топлива" onClick={() => setSelectedItem(Tab.FUEL_CONSUMPTION)}></MyButton>
         <MyButton children="Замена масла" onClick={() => setSelectedItem(Tab.OIL_CHANGE)}></MyButton>
         <MyButton children="Расходы на ремонт" onClick={() => setSelectedItem(Tab.REPAIR_COSTS)}></MyButton>
-        <MyButton children="Техническое обслуживание" onClick={() => setSelectedItem(Tab.FUEL_CONSUMPTION)}></MyButton>
+        <MyButton children="Техническое обслуживание" onClick={() => setSelectedItem(Tab.TECHNICAL_MAINTENANCE)}></MyButton>
         <MyButton children="Статистика" onClick={() => setSelectedItem(Tab.FUEL_CONSUMPTION)}></MyButton>
         <MyButton children="Тюнинг" onClick={() => setSelectedItem(Tab.TUNING)}></MyButton>
       </div>

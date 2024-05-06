@@ -46,7 +46,7 @@
     padding: 10px;
     background-color: rgb(255, 255, 255);
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     border: 1px solid rgb(100, 100, 100);
     border-radius: 8px;
 }
@@ -69,8 +69,18 @@
     justify-items: center;
 }
 
+.tabMenu{
+    display: grid;
+    grid-template-rows: auto;
+    gap: 15px;
+}
+
 .time{
     display: inline-block;
     vertical-align: top; 
     height: 30px;
+}
+
+.infoStats{
+    display: grid ;
 }

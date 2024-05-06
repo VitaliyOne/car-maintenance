@@ -29,28 +29,55 @@ const tabs: TabComponentsMap = {
   [Tab.TUNING]: Tuning
 }
 
-
-
 const CarMaintenanceMenu = () => {
-  const [selectedItem, setSelectedItem] = useState<`${Tab}`>(Tab.FUEL_CONSUMPTION)
+  const [selectedItem, setSelectedItem] = useState<`${Tab}`>(Tab.FUEL_CONSUMPTION);
 
   const TabComponent = tabs[selectedItem];
+  const isActive = (tab: Tab) => selectedItem === tab;
+
+  const activeTab = {
+    backgroundColor: 'gray', color: 'white', cursor: 'default'
+  };
 
   return (
-    <div className="carMaintenanceMenu">
-      <div style={{display: "grid", gridTemplateRows:"auto", gap:"15px"}}>
-        <MyButton children="Расход топлива" onClick={() => setSelectedItem(Tab.FUEL_CONSUMPTION)}></MyButton>
-        <MyButton children="Замена масла" onClick={() => setSelectedItem(Tab.OIL_CHANGE)}></MyButton>
-        <MyButton children="Расходы на ремонт" onClick={() => setSelectedItem(Tab.REPAIR_COSTS)}></MyButton>
-        <MyButton children="Техническое обслуживание" onClick={() => setSelectedItem(Tab.TECHNICAL_MAINTENANCE)}></MyButton>
-        <MyButton children="Статистика" onClick={() => setSelectedItem(Tab.STATISTICS)}></MyButton>
-        <MyButton children="Тюнинг" onClick={() => setSelectedItem(Tab.TUNING)}></MyButton>
-      </div>
+    <main className="carMaintenanceMenu">
+      <nav className="tabMenu">
+        <MyButton
+          children="Расход топлива"
+          onClick={() => setSelectedItem(Tab.FUEL_CONSUMPTION)}
+          style={isActive(Tab.FUEL_CONSUMPTION) ? activeTab : {}}
+        />
+        <MyButton
+          children="Замена масла"
+          onClick={() => setSelectedItem(Tab.OIL_CHANGE)}
+          style={isActive(Tab.OIL_CHANGE) ? activeTab : {}}
+        />
+        <MyButton
+          children="Расходы на ремонт"
+          onClick={() => setSelectedItem(Tab.REPAIR_COSTS)}
+          style={isActive(Tab.REPAIR_COSTS) ? activeTab : {}}
+        />
+        <MyButton
+          children="Техническое обслуживание"
+          onClick={() => setSelectedItem(Tab.TECHNICAL_MAINTENANCE)}
+          style={isActive(Tab.TECHNICAL_MAINTENANCE) ? activeTab : {}}
+        />
+        <MyButton
+          children="Статистика"
+          onClick={() => setSelectedItem(Tab.STATISTICS)}
+          style={isActive(Tab.STATISTICS) ? activeTab : {}}
+        />
+        <MyButton
+          children="Тюнинг"
+          onClick={() => setSelectedItem(Tab.TUNING)}
+          style={isActive(Tab.TUNING) ? activeTab : {}}
+        />
+      </nav>
       <div>
         <TabComponent />
       </div>
-    </div>
-  )
+    </main>
+  );
 }
 
 export default CarMaintenanceMenu

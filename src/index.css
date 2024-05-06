@@ -16,5 +16,5 @@
 
 body {
   background-color: rgba(181, 181, 181, 0.2);
-  background: url('../public/background.png');
+  background: url('/background.png');
 }

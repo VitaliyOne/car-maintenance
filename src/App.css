@@ -69,7 +69,7 @@
     justify-items: center;
 }
 
-.tabMenu{
+.navMenu{
     display: grid;
     grid-template-rows: auto;
     gap: 15px;

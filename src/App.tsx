@@ -7,9 +7,9 @@ function App() {
 
   return (
     <>
-    <InformationCar></InformationCar>
-    <CarMaintenanceMenu></CarMaintenanceMenu>
-    <Footer></Footer>
+      <InformationCar></InformationCar>
+      <CarMaintenanceMenu></CarMaintenanceMenu>
+      <Footer></Footer>
     </>
   )
 }

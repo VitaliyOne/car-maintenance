@@ -13,7 +13,7 @@ const FuelСonsumption = () => {
   }, []);
 
   return (
-    <div>
+    <section>
       <time className="time"><img src={Fuel} alt="Fuel" style={{ height: "20px" }} /> &nbsp;{dateTime}</time>
       <form>
         <div className="infoFuelСonsumption">
@@ -28,8 +28,7 @@ const FuelСonsumption = () => {
           <MyButton children="Сохранить"></MyButton>
         </div>
       </form>
-
-    </div>
+    </section>
   )
 }
 

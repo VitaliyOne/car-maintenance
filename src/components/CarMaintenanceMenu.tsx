@@ -36,12 +36,12 @@ const CarMaintenanceMenu = () => {
   const isActive = (tab: Tab) => selectedItem === tab;
 
   const activeTab = {
-    backgroundColor: 'gray', color: 'white', cursor: 'default'
+    borderBottom: '1mm solid gray', cursor: 'default',
   };
 
   return (
     <main className="carMaintenanceMenu">
-      <nav className="tabMenu">
+      <nav className="navMenu">
         <MyButton
           children="Расход топлива"
           onClick={() => setSelectedItem(Tab.FUEL_CONSUMPTION)}
@@ -73,10 +73,8 @@ const CarMaintenanceMenu = () => {
           style={isActive(Tab.TUNING) ? activeTab : {}}
         />
       </nav>
-      <div>
-        <TabComponent />
-      </div>
-    </main>
+      <TabComponent />
+    </main >
   );
 }
 

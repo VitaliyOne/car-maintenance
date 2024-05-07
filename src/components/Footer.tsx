@@ -13,7 +13,6 @@ const Footer = () => {
           https://github.com/VitaliyOne
         </a>
       </p>
-
       <p>
         Telegram:
         <a

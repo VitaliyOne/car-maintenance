@@ -10,10 +10,10 @@ const Statistics = () => {
     setDateTime(`${date.getDate()}.${(date.getMonth() + 1).toString().length === 1 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1}.${date.getFullYear()}`)
   }, []);
   return (
-    <div>
+    <section>
       <time className="time"><img src={Stats} alt="IconRepairCosts" style={{ height: "30px" }} /> &nbsp;{dateTime}</time>
       <div className="infoStats"></div>
-    </div>
+    </section>
   )
 }
 

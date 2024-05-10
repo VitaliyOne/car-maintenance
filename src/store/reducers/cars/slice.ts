@@ -10,6 +10,9 @@ const carsSlice = createSlice({
     addCar: (state, action: PayloadAction<Cars>) => {
       state.cars.unshift(action.payload);
     },
+    deleteCar: (state) => {
+      state.cars = [];
+    },
     updateCar: (state, action: PayloadAction<Cars>) => {
       const { payload } = action;
       const car = state.cars.find((item) => item.id === payload.id);
@@ -18,6 +21,6 @@ const carsSlice = createSlice({
   }
 })
 
-export const { addCar, updateCar } = carsSlice.actions;
+export const { addCar, updateCar, deleteCar } = carsSlice.actions;
 
 export default carsSlice;

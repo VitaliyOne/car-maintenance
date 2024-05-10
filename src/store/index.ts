@@ -1,8 +1,9 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import carsSlice from './reducers/cars/slice';
 
+
 const rootReducer = combineReducers({
-  cars: carsSlice
+  cars: carsSlice.reducer
 });
 
 export const store = configureStore({

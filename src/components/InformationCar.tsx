@@ -27,11 +27,11 @@ const InformationCar = () => {
     }
 
     return (
-        <header style={{ backgroundColor: `while`, width: "100%" }}>
+        <header>
             {cars && cars.length > 0 ? (
                 <div className="formInformationYourCar">
                     <div className="itemFormYourCar1">
-                        <a style={{ margin: "0 15px 0 0" }}>Ваш авто:</a>
+                        <p style={{ margin: "0 15px 0 0" }}>Ваш авто:</p>
                         <h1>{cars[0].name}</h1>
                     </div >
                     <div className="itemFormYourCar2">

@@ -51,10 +51,10 @@
     border-radius: 8px;
 }
 
-.infoFuelСonsumption{
+.infoFuelFilling{
     margin: 15px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-column-gap: 40px;
     grid-row-gap: 10px;
     justify-items: center;

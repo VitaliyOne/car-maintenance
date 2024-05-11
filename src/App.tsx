@@ -9,9 +9,9 @@ function App() {
 
   return (
     <Provider store={store}>
-      <InformationCar></InformationCar>
-      <CarMaintenanceMenu></CarMaintenanceMenu>
-      <Footer></Footer>
+      <InformationCar />
+      <CarMaintenanceMenu />
+      <Footer />
     </Provider>
   )
 }

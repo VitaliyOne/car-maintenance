@@ -1,11 +1,11 @@
 import { useState } from "react"
-import FuelСonsumption from "./FuelСonsumption"
 import OilСhange from "./OilСhange"
 import MyButton from "./UI/button/MyButton"
 import RepairCosts from "./RepairCosts"
 import Tuning from "./Tuning"
 import TechnicalMaintenance from "./TechnicalMaintenance"
 import Statistics from "./Statistics"
+import FuelFilling from "./FuelFilling/FuelFilling"
 
 enum Tab {
   FUEL_CONSUMPTION = 'FUEL_CONSUMPTION',
@@ -21,7 +21,7 @@ type TabComponentsMap = {
 }
 
 const tabs: TabComponentsMap = {
-  [Tab.FUEL_CONSUMPTION]: FuelСonsumption,
+  [Tab.FUEL_CONSUMPTION]: FuelFilling,
   [Tab.OIL_CHANGE]: OilСhange,
   [Tab.REPAIR_COSTS]: RepairCosts,
   [Tab.TECHNICAL_MAINTENANCE]: TechnicalMaintenance,
@@ -43,7 +43,7 @@ const CarMaintenanceMenu = () => {
     <main className="carMaintenanceMenu">
       <nav className="navMenu">
         <MyButton
-          children="Расход топлива"
+          children="Заправка"
           onClick={() => setSelectedItem(Tab.FUEL_CONSUMPTION)}
           style={isActive(Tab.FUEL_CONSUMPTION) ? activeTab : {}}
         />

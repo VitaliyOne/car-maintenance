@@ -1,9 +1,11 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import carsSlice from './reducers/cars/slice';
+import fuelSlice from './reducers/fuels/slice';
 
 
 const rootReducer = combineReducers({
-  cars: carsSlice.reducer
+  cars: carsSlice.reducer,
+  fuels: fuelSlice.reducer
 });
 
 export const store = configureStore({

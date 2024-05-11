@@ -76,6 +76,7 @@ const OilСhange = () => {
             <form style={{ marginTop: "10px" }}>
                 <div className="infoOilСhange">
                     <InputAdornment placeholder="Пробег" type="number" span="км"></InputAdornment>
+                    <InputAdornment placeholder="Цена" type="number" span="руб"></InputAdornment>
                     <MySelect
                         defaultValue="Вязкость масла"
                         value={oilViscosityValue}
@@ -88,7 +89,6 @@ const OilСhange = () => {
                         option={typeOil}
                         onChange={(event) => getTypeOil(event)}>
                     </MySelect>
-                    <InputAdornment placeholder="Цена" type="number" span="руб"></InputAdornment>
                     <MyInput placeholder="Коментарий" type="text"></MyInput>
                 </div>
                 <div style={{ marginTop: "10px" }}>

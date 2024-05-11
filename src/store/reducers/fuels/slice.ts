@@ -15,12 +15,16 @@ const fuelSlice = createSlice({
     },
     updateFuelInfo: (state, action: PayloadAction<IFuelForm>) => {
       const { payload } = action;
-      const car = state.fuels.find((item) => item.id === payload.id);
-      if (car) Object.assign(car, payload);
+      const fuel = state.fuels.find((item) => item.id === payload.id);
+      if (fuel) Object.assign(fuel, payload);
+    },
+    removeFuelInfo: (state, action: PayloadAction<IFuelForm['id']>) => {
+      const { payload: fuelId } = action;
+      state.fuels = state.fuels.filter((item) => item.id !== fuelId);
     }
   }
 })
 
-export const { addFuelInfo, deleteFuelInfo, updateFuelInfo } = fuelSlice.actions;
+export const { addFuelInfo, deleteFuelInfo, updateFuelInfo, removeFuelInfo } = fuelSlice.actions;
 
 export default fuelSlice;

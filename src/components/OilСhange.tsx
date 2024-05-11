@@ -59,8 +59,7 @@ const OilСhange = () => {
         }]
 
     useEffect(() => {
-        const date = new Date();
-        setDateTime(`${date.getDate()}.${(date.getMonth() + 1).toString().length === 1 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1}.${date.getFullYear()}`)
+        setDateTime(new Date().toLocaleDateString())
     }, []);
 
     const getOil = (oilViscosityValue: string) => {

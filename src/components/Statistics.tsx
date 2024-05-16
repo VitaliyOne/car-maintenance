@@ -6,6 +6,8 @@ const Statistics = () => {
   const [dateTime, setDateTime] = useState<string>();
   const cars = useAppSelector((state) => state.cars.cars || []);
   const fuelsInfo = useAppSelector((state) => state.fuels.fuels || []);
+  const oilChangeInfo = useAppSelector((state) => state.oilChange.oilChanges)
+
 
   useEffect(() => {
     setDateTime(new Date().toLocaleDateString())
@@ -44,6 +46,38 @@ const Statistics = () => {
             </table>
           ) : (
             <h1 style={{ margin: '15px 0' }}>Нет данных о заправках</h1>
+          )
+        }
+      </div>
+      <div className="infoStats">
+        {
+          oilChangeInfo && oilChangeInfo.length > 0 ? (
+            <table style={{ borderCollapse: 'collapse' }}>
+              <thead>
+                <tr>
+                  <th>Дата</th>
+                  <th>Пробег</th>
+                  <th>Цена</th>
+                  <th>Вязкость</th>
+                  <th>Тип</th>
+                  <th>Комментарий</th>
+                </tr>
+              </thead>
+              <tbody>
+                {oilChangeInfo.map((oilChange) => (
+                  <tr key={oilChange.id}>
+                    <td>{new Date(oilChange.id).toLocaleDateString()}</td>
+                    <td>{oilChange.mileage}</td>
+                    <td>{oilChange.price}</td>
+                    <td>{oilChange.oilViscosity}</td>
+                    <td>{(oilChange.oilType)}</td>
+                    <td>{oilChange.comment}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ) : (
+            <h1 style={{ margin: '15px 0' }}>Нет данных о замене масла</h1>
           )
         }
       </div>

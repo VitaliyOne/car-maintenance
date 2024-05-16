@@ -43,7 +43,7 @@ const Statistics = () => {
               </tbody>
             </table>
           ) : (
-            <h1 style={{ margin: '15px 0' }}>Нет данных</h1>
+            <h1 style={{ margin: '15px 0' }}>Нет данных о заправках</h1>
           )
         }
       </div>

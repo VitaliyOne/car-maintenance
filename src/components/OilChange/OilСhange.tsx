@@ -7,16 +7,17 @@ import MyButton from "../UI/button/MyButton";
 import { DEFAULT_OIL_FORM_DATA } from "./const";
 import { IOilChangeForm } from "./types";
 import useAppDispatch from "../../hooks/useAppDispatch";
+import { addOilChangeInfo } from "../../store/reducers/oil/slice";
 
 
 const OilСhange = () => {
     const [dateTime, setDateTime] = useState<string>();
-    const [oilViscosityValue, setOilViscostyValue] = useState<string>('')
-    const [typeOilValue, settypeOilValue] = useState<string>('')
+    const [oilViscosity, setOilViscostyValue] = useState<string>('')
+    const [oilType, settypeOilValue] = useState<string>('')
     const [formData, setFormData] = useState<IOilChangeForm>(DEFAULT_OIL_FORM_DATA);
     const dispatch = useAppDispatch();
 
-    const oilViscosity = [
+    const oilViscosityOptions = [
         {
             value: "0w-40",
             name: "0w-40"
@@ -50,7 +51,7 @@ const OilСhange = () => {
             name: "20w-40"
         }]
 
-    const typeOil = [
+    const typeOilOptions = [
         {
             value: "Синтетика",
             name: "Синтетика"
@@ -73,7 +74,7 @@ const OilСhange = () => {
     const onSaveOilChangeInfo = () => {
         dispatch(
             addOilChangeInfo({
-                ...formData, oilViscosityValue, typeOilValue
+                ...formData, oilViscosity, oilType
             })
         );
 
@@ -102,14 +103,14 @@ const OilСhange = () => {
                     <InputAdornment onChange={onInputChange} name="price" value={formData.price} placeholder="Цена" type="number" span="руб"></InputAdornment>
                     <MySelect
                         defaultValue="Вязкость масла"
-                        value={oilViscosityValue}
-                        option={oilViscosity}
+                        value={oilViscosity}
+                        option={oilViscosityOptions}
                         onChange={(event) => getOil(event)}>
                     </MySelect>
                     <MySelect
                         defaultValue="Тип масла"
-                        value={typeOilValue}
-                        option={typeOil}
+                        value={oilType}
+                        option={typeOilOptions}
                         onChange={(event) => getTypeOil(event)}>
                     </MySelect>
                     <MyInput onChange={onInputChange} name="comment" value={formData.comment} placeholder="Коментарий" type="text" autoComplete="off"></MyInput>

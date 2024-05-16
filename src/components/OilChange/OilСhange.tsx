@@ -1,14 +1,20 @@
 import { useEffect, useState } from "react";
 import OilLamp from '/public/oilLamp.png';
-import MyButton from "./UI/button/MyButton";
-import MyInput from "./UI/input/MyInput";
-import InputAdornment from "./UI/InputAdornment/InputAdornment";
-import MySelect from "./UI/select/MySelect";
+import InputAdornment from "../UI/InputAdornment/InputAdornment";
+import MySelect from "../UI/select/MySelect";
+import MyInput from "../UI/input/MyInput";
+import MyButton from "../UI/button/MyButton";
+import { DEFAULT_OIL_FORM_DATA } from "./const";
+import { IOilChangeForm } from "./types";
+import useAppDispatch from "../../hooks/useAppDispatch";
+
 
 const OilСhange = () => {
     const [dateTime, setDateTime] = useState<string>();
     const [oilViscosityValue, setOilViscostyValue] = useState<string>('')
     const [typeOilValue, settypeOilValue] = useState<string>('')
+    const [formData, setFormData] = useState<IOilChangeForm>(DEFAULT_OIL_FORM_DATA);
+    const dispatch = useAppDispatch();
 
     const oilViscosity = [
         {
@@ -62,6 +68,18 @@ const OilСhange = () => {
         setDateTime(new Date().toLocaleDateString())
     }, []);
 
+    const resetFormData = () => setFormData(DEFAULT_OIL_FORM_DATA);
+
+    const onSaveOilChangeInfo = () => {
+        dispatch(
+            addOilChangeInfo({
+                ...formData, oilViscosityValue, typeOilValue
+            })
+        );
+
+        resetFormData()
+    }
+
     const getOil = (oilViscosityValue: string) => {
         setOilViscostyValue(oilViscosityValue)
     }
@@ -70,13 +88,18 @@ const OilСhange = () => {
         settypeOilValue(typeOilValue)
     }
 
+    const onInputChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
+        const { name, value } = event.target;
+        setFormData((state) => ({ ...state, [name]: value }));
+    };
+
     return (
         <section>
             <time className="time"><img src={OilLamp} alt="OilLamp" style={{ height: "20px" }} /> &nbsp;{dateTime}</time>
             <form style={{ marginTop: "10px" }}>
                 <div className="infoOilСhange">
-                    <InputAdornment placeholder="Пробег" type="number" span="км"></InputAdornment>
-                    <InputAdornment placeholder="Цена" type="number" span="руб"></InputAdornment>
+                    <InputAdornment onChange={onInputChange} name="mileage" value={formData.mileage} placeholder="Пробег" type="number" span="км"></InputAdornment>
+                    <InputAdornment onChange={onInputChange} name="price" value={formData.price} placeholder="Цена" type="number" span="руб"></InputAdornment>
                     <MySelect
                         defaultValue="Вязкость масла"
                         value={oilViscosityValue}
@@ -89,10 +112,10 @@ const OilСhange = () => {
                         option={typeOil}
                         onChange={(event) => getTypeOil(event)}>
                     </MySelect>
-                    <MyInput placeholder="Коментарий" type="text"></MyInput>
+                    <MyInput onChange={onInputChange} name="comment" value={formData.comment} placeholder="Коментарий" type="text" autoComplete="off"></MyInput>
                 </div>
                 <div style={{ marginTop: "10px" }}>
-                    <MyButton children="Сохранить"></MyButton>
+                    <MyButton onClick={onSaveOilChangeInfo} children="Сохранить"></MyButton>
                 </div>
             </form>
             <div style={{ textAlign: "left", marginTop: "10px", fontSize: "13px" }}>

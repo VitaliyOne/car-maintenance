@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Fuel from '/iconFuel.png';
 import { IFuelForm } from "./types";
 import InputAdornment from "../UI/InputAdornment/InputAdornment";
@@ -7,15 +7,12 @@ import MyButton from "../UI/button/MyButton";
 import { DEFAULT_FUEL_FORM_DATA } from "./const";
 import useAppDispatch from "../../hooks/useAppDispatch";
 import { addFuelInfo } from "../../store/reducers/fuels/slice";
+import useAppSelector from "../../hooks/useAppSelector";
 
 const FuelFilling = () => {
-  const [dateTime, setDateTime] = useState<string>();
+  const dateTime = useAppSelector((state) => state.localTime.time)
   const [formData, setFormData] = useState<IFuelForm>(DEFAULT_FUEL_FORM_DATA);
   const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    setDateTime(new Date().toLocaleDateString())
-  }, []);
 
   const resetFormData = () => setFormData(DEFAULT_FUEL_FORM_DATA);
 

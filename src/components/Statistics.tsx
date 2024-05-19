@@ -1,17 +1,11 @@
-import { useEffect, useState } from "react";
 import Stats from '/stats.svg';
 import useAppSelector from "../hooks/useAppSelector";
 
 const Statistics = () => {
-  const [dateTime, setDateTime] = useState<string>();
+  const dateTime = useAppSelector((state) => state.localTime.time)
   const cars = useAppSelector((state) => state.cars.cars || []);
   const fuelsInfo = useAppSelector((state) => state.fuels.fuels || []);
   const oilChangeInfo = useAppSelector((state) => state.oilChange.oilChanges)
-
-
-  useEffect(() => {
-    setDateTime(new Date().toLocaleDateString())
-  }, []);
 
   return (
     <section>

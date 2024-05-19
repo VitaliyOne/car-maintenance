@@ -1,16 +1,12 @@
-import { useEffect, useState } from 'react';
 import TuningIcon from '/public/tuningIcon.png';
 import MyInput from './UI/input/MyInput';
 import MyButton from './UI/button/MyButton';
 import InputAdornment from './UI/InputAdornment/InputAdornment';
 import MyTextarea from './UI/textarea/MyTextarea';
+import useAppSelector from '../hooks/useAppSelector';
 
 const Tuning = () => {
-  const [dateTime, setDateTime] = useState<string>();
-
-  useEffect(() => {
-    setDateTime(new Date().toLocaleDateString())
-  }, []);
+  const dateTime = useAppSelector((state) => state.localTime.time)
 
   return (
     <div>

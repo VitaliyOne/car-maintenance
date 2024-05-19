@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import useAppSelector from "../hooks/useAppSelector";
 import InputAdornment from "./UI/InputAdornment/InputAdornment"
 import MyButton from "./UI/button/MyButton"
 import MyInput from "./UI/input/MyInput"
@@ -6,11 +6,7 @@ import Maintenance from '/public/maintenance2.png';
 
 
 const TechnicalMaintenance = () => {
-  const [dateTime, setDateTime] = useState<string>();
-
-  useEffect(() => {
-    setDateTime(new Date().toLocaleDateString())
-  }, []);
+  const dateTime = useAppSelector((state) => state.localTime.time)
 
   return (
     <section>

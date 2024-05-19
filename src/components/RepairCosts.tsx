@@ -1,15 +1,11 @@
-import { useEffect, useState } from "react";
 import IconRepairCosts from '/public/repairCosts.png';
 import MyInput from "./UI/input/MyInput";
 import InputAdornment from "./UI/InputAdornment/InputAdornment";
 import MyButton from "./UI/button/MyButton";
+import useAppSelector from '../hooks/useAppSelector';
 
 const RepairCosts = () => {
-  const [dateTime, setDateTime] = useState<string>();
-
-  useEffect(() => {
-    setDateTime(new Date().toLocaleDateString())
-  }, []);
+  const dateTime = useAppSelector((state) => state.localTime.time)
 
   return (
     <section>

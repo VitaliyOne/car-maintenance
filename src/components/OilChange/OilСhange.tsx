@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import OilLamp from '/public/oilLamp.png';
 import InputAdornment from "../UI/InputAdornment/InputAdornment";
 import MySelect from "../UI/select/MySelect";
@@ -8,10 +8,11 @@ import { DEFAULT_OIL_FORM_DATA } from "./const";
 import { IOilChangeForm } from "./types";
 import useAppDispatch from "../../hooks/useAppDispatch";
 import { addOilChangeInfo } from "../../store/reducers/oil/slice";
+import useAppSelector from "../../hooks/useAppSelector";
 
 
 const OilСhange = () => {
-    const [dateTime, setDateTime] = useState<string>();
+    const dateTime = useAppSelector((state) => state.localTime.time)
     const [oilViscosity, setOilViscostyValue] = useState<string>('')
     const [oilType, settypeOilValue] = useState<string>('')
     const [formData, setFormData] = useState<IOilChangeForm>(DEFAULT_OIL_FORM_DATA);
@@ -64,10 +65,6 @@ const OilСhange = () => {
             value: "Минеральное",
             name: "Минеральное"
         }]
-
-    useEffect(() => {
-        setDateTime(new Date().toLocaleDateString())
-    }, []);
 
     const resetFormData = () => setFormData(DEFAULT_OIL_FORM_DATA);
 

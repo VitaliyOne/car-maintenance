@@ -8,7 +8,7 @@ import { DEFAULT_REPAIR_COSTS_FORM_DATA } from './const';
 import { IRepairCostsForm } from './types';
 import useAppDispatch from '../../hooks/useAppDispatch';
 import { addRepairCostsInfo } from '../../store/reducers/repair/slice';
-import uniqid from 'uniqid';
+import { generateUniqueId } from '../uniqId';
 
 const RepairCosts = () => {
   const dateTime = useAppSelector((state) => state.localTime.time)
@@ -18,7 +18,7 @@ const RepairCosts = () => {
   const onSaveRepairCostsInfo = () => {
     dispatch(
       addRepairCostsInfo({
-        ...formData, id: uniqid()
+        ...formData, id: generateUniqueId()
       })
     );
 

@@ -8,7 +8,7 @@ import { DEFAULT_FUEL_FORM_DATA } from "./const";
 import useAppDispatch from "../../hooks/useAppDispatch";
 import { addFuelInfo } from "../../store/reducers/fuels/slice";
 import useAppSelector from "../../hooks/useAppSelector";
-import uniqid from "uniqid";
+import { generateUniqueId } from "../uniqId";
 
 const FuelFilling = () => {
   const dateTime = useAppSelector((state) => state.localTime.time)
@@ -20,7 +20,7 @@ const FuelFilling = () => {
   const onSaveFuelInfo = () => {
     dispatch(
       addFuelInfo({
-        ...formData, id: uniqid()
+        ...formData, id: generateUniqueId()
       })
     );
 

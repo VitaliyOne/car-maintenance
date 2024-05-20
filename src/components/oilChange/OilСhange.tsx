@@ -9,8 +9,7 @@ import { IOilChangeForm } from "./types";
 import useAppDispatch from "../../hooks/useAppDispatch";
 import { addOilChangeInfo } from "../../store/reducers/oil/slice";
 import useAppSelector from "../../hooks/useAppSelector";
-import uniqid from "uniqid";
-
+import { generateUniqueId } from "../uniqId";
 
 const OilСhange = () => {
     const dateTime = useAppSelector((state) => state.localTime.time)
@@ -72,7 +71,7 @@ const OilСhange = () => {
     const onSaveOilChangeInfo = () => {
         dispatch(
             addOilChangeInfo({
-                ...formData, oilViscosity, oilType, id: uniqid()
+                ...formData, oilViscosity, oilType, id: generateUniqueId()
             })
         );
 

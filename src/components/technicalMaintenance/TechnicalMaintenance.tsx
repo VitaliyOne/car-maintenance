@@ -9,8 +9,8 @@ import { DEFAULT_TECHNICAL_MAINTENANCE_FORM_DATA } from "./const";
 
 
 const TechnicalMaintenance = () => {
-  const dateTime = useAppSelector((state) => state.localTime.time)
-  const [formData, setFormData] = useState<ITechnicalMaintenanceForm> (DEFAULT_TECHNICAL_MAINTENANCE_FORM_DATA)
+  const dateTime = useAppSelector((state) => state.localTime.time);
+  const [formData, setFormData] = useState<ITechnicalMaintenanceForm>(DEFAULT_TECHNICAL_MAINTENANCE_FORM_DATA);
 
   const onInputChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     const { name, value } = event.target;
@@ -23,7 +23,7 @@ const TechnicalMaintenance = () => {
       <form>
         <div className="infoOilСhange">
           <MyInput onChange={onInputChange} name="typeService" value={formData.typeService} placeholder="Вид обслуживания" type="text"></MyInput>
-          <MyInput onChange={onInputChange} name="priceWork" value={formData.priceWork}  placeholder="Стоимость работ" type="text"></MyInput>
+          <MyInput onChange={onInputChange} name="priceWork" value={formData.priceWork} placeholder="Стоимость работ" type="text"></MyInput>
           <MyInput onChange={onInputChange} name="consumables" value={formData.consumables} placeholder="Расходные материалы" type="text"></MyInput>
           <MyInput onChange={onInputChange} name="vendorСode" value={formData.vendorСode} placeholder="Артикул" type="text"></MyInput>
           <InputAdornment onChange={onInputChange} name="price" value={formData.price} placeholder="Цена запчасти" type="number" span="руб"></InputAdornment>

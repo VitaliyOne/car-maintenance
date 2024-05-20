@@ -7,7 +7,6 @@ import Maintenance from '/public/maintenance2.png';
 import { ITechnicalMaintenanceForm } from "./types";
 import { DEFAULT_TECHNICAL_MAINTENANCE_FORM_DATA } from "./const";
 
-
 const TechnicalMaintenance = () => {
   const dateTime = useAppSelector((state) => state.localTime.time);
   const [formData, setFormData] = useState<ITechnicalMaintenanceForm>(DEFAULT_TECHNICAL_MAINTENANCE_FORM_DATA);

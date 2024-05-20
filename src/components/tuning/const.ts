@@ -1,8 +1,7 @@
-import uniqid from 'uniqid';
 import { ITuningForm } from './types';
 
 export const DEFAULT_TUNING_FORM_DATA: ITuningForm = {
-    id: uniqid(),
+    id: '',
     date: new Date().getTime(),
     typeTuning: '',
     price: '',

@@ -29,7 +29,6 @@ const Statistics = () => {
               <tbody>
                 {fuelsInfo.map((fuel) => (
                   <tr key={fuel.id}>
-                    <td>{fuel.id}</td>
                     <td>{new Date(fuel.date).toLocaleDateString()}</td>
                     <td>{fuel.amount}</td>
                     <td>{fuel.price}</td>

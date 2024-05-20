@@ -6,10 +6,23 @@ import useAppSelector from '../../hooks/useAppSelector';
 import { useState } from 'react';
 import { DEFAULT_REPAIR_COSTS_FORM_DATA } from './const';
 import { IRepairCostsForm } from './types';
+import useAppDispatch from '../../hooks/useAppDispatch';
+import { addRepairCostsInfo } from '../../store/reducers/repair/slice';
 
 const RepairCosts = () => {
   const dateTime = useAppSelector((state) => state.localTime.time)
   const [formData, setFormData] = useState<IRepairCostsForm>(DEFAULT_REPAIR_COSTS_FORM_DATA);
+  const dispatch = useAppDispatch();
+
+  const onSaveRepairCostsInfo = () => {
+    dispatch(
+        addRepairCostsInfo({
+            ...formData
+        })
+    );
+
+    resetFormData()
+}
 
   const resetFormData = () => setFormData(DEFAULT_REPAIR_COSTS_FORM_DATA);
 

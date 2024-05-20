@@ -5,7 +5,8 @@ const Statistics = () => {
   const dateTime = useAppSelector((state) => state.localTime.time)
   const cars = useAppSelector((state) => state.cars.cars || []);
   const fuelsInfo = useAppSelector((state) => state.fuels.fuels || []);
-  const oilChangeInfo = useAppSelector((state) => state.oilChange.oilChanges)
+  const oilChangeInfo = useAppSelector((state) => state.oilChange.oilChanges || []);
+  const repairCostsInfo = useAppSelector((state) => state.repairCosts.repairCosts || []);
 
   return (
     <section>
@@ -72,6 +73,42 @@ const Statistics = () => {
             </table>
           ) : (
             <h1 style={{ margin: '15px 0' }}>Нет данных о замене масла</h1>
+          )
+        }
+      </div>
+      <div className="infoStats">
+        {
+          repairCostsInfo && repairCostsInfo.length > 0 ? (
+            <table style={{ borderCollapse: 'collapse' }}>
+              <thead>
+                <tr>
+                  <th>Дата</th>
+                  <th>Вид раемонта</th>
+                  <th>Стоимость работ</th>
+                  <th>Запчасть</th>
+                  <th>Артикул запчасти</th>
+                  <th>Цена запчасти</th>
+                  <th>Пробег</th>
+                  <th>Комментарий</th>
+                </tr>
+              </thead>
+              <tbody>
+                {repairCostsInfo.map((repairCosts) => (
+                  <tr key={repairCosts.id}>
+                    <td>{new Date(repairCosts.id).toLocaleDateString()}</td>
+                    <td>{repairCosts.typeRepair}</td>
+                    <td>{repairCosts.priceWork}</td>
+                    <td>{repairCosts.replacementPart}</td>
+                    <td>{repairCosts.vendorСode}</td>
+                    <td>{repairCosts.price}</td>
+                    <td>{repairCosts.mileage}</td>
+                    <td>{repairCosts.comment}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ) : (
+            <h1 style={{ margin: '15px 0' }}>Нет данных о ремонтах</h1>
           )
         }
       </div>

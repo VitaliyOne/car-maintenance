@@ -10,14 +10,9 @@ import { ITuningForm } from './types';
 
 const Tuning = () => {
   const dateTime = useAppSelector((state) => state.localTime.time);
-  const [formData, setFormData] = useState<ITuningForm> (DEFAULT_TUNING_FORM_DATA);
-  const [description, setDescription] = useState<string>('')
+  const [formData, setFormData] = useState<ITuningForm>(DEFAULT_TUNING_FORM_DATA);
 
-  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setDescription(event.target.value);
-  };
-
-  const onInputChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
+  const onInputChange: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> = (event) => {
     const { name, value } = event.target;
     setFormData((state) => ({ ...state, [name]: value }));
   };
@@ -34,7 +29,7 @@ const Tuning = () => {
           <InputAdornment onChange={onInputChange} name="acceleration12" value={formData.acceleration12} placeholder="Разгон 10-20" type="number" span="сек"></InputAdornment>
         </div>
         <div className="infoOilСhange">
-          <MyTextarea handleChange={handleChange} value={description} placeholder='Описание'></MyTextarea>
+          <MyTextarea onChange={onInputChange} name="description" value={formData.description} placeholder='Описание' />
         </div>
         <MyButton children="Сохранить"></MyButton>
       </form>
@@ -42,4 +37,4 @@ const Tuning = () => {
   )
 }
 
-export default Tuning
+export default Tuning;

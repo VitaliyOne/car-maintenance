@@ -1,7 +1,7 @@
 import { useState } from "react"
 import MyButton from "./UI/button/MyButton"
 import RepairCosts from "./repairCosts/RepairCosts"
-import Tuning from "./Tuning"
+import Tuning from "./tuning/Tuning"
 import TechnicalMaintenance from "./technicalMaintenance/TechnicalMaintenance"
 import Statistics from "./Statistics"
 import FuelFilling from "./fuelFilling/FuelFilling"

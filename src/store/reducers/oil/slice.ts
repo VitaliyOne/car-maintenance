@@ -21,8 +21,8 @@ const oilChangeSlice = createSlice({
       if (oilChange) Object.assign(oilChange, payload);
     },
     removeOilChangeInfo: (state, action: PayloadAction<IOilChangeForm['id']>) => {
-      const { payload: fuelId } = action;
-      state.oilChanges = state.oilChanges.filter((item) => item.id !== fuelId);
+      const { payload: oilChangesId } = action;
+      state.oilChanges = state.oilChanges.filter((item) => item.id !== oilChangesId);
     }
   }
 })

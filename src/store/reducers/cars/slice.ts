@@ -2,7 +2,6 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { INITIAL_STATE, REDUCER_PATH } from "./const";
 import { Cars } from "../../../types";
 
-
 const carsSlice = createSlice({
   name: REDUCER_PATH,
   initialState: INITIAL_STATE,

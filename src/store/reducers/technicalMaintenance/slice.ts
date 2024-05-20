@@ -14,13 +14,13 @@ const technicalMaintenancesSlice = createSlice({
     },
     updateTechnicalMaintenancesInfo: (state, action: PayloadAction<ITechnicalMaintenanceForm>) => {
       const { payload } = action;
-      const oilChange = state.technicalMaintenances
-      oilChange.find((item) => item.id === payload.id);
-      if (oilChange) Object.assign(oilChange, payload);
+      const technicalMaintenance = state.technicalMaintenances
+      technicalMaintenance.find((item) => item.id === payload.id);
+      if (technicalMaintenance) Object.assign(technicalMaintenance, payload);
     },
     removeTechnicalMaintenancesInfo: (state, action: PayloadAction<ITechnicalMaintenanceForm['id']>) => {
-      const { payload: fuelId } = action;
-      state.technicalMaintenances = state.technicalMaintenances.filter((item) => item.id !== fuelId);
+      const { payload: technicalMaintenancesId } = action;
+      state.technicalMaintenances = state.technicalMaintenances.filter((item) => item.id !== technicalMaintenancesId);
     }
   }
 })

@@ -2,8 +2,6 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { INITIAL_STATE, REDUCER_PATH } from "./const";
 import { localTimeState } from "./types";
 
-
-
 const localTimeSlice = createSlice({
   name: REDUCER_PATH,
   initialState: INITIAL_STATE,

@@ -5,6 +5,7 @@ import oilChangeSlice from './reducers/oil/slice';
 import localTimeSlice from './reducers/localTime/slice';
 import repairCostsSlice from './reducers/repair/slice';
 import technicalMaintenancesSlice from './reducers/technicalMaintenance/slice';
+import tuningSlice from './reducers/tuning/slice';
 
 
 const rootReducer = combineReducers({
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
   localTime: localTimeSlice.reducer,
   repairCosts: repairCostsSlice.reducer,
   technicalMaintenance: technicalMaintenancesSlice.reducer,
+  tuning: tuningSlice.reducer
 });
 
 export const store = configureStore({

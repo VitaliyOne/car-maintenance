@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { INITIAL_STATE, REDUCER_PATH } from "./const";
-import { IFuelForm } from "../../../components/FuelFilling/types";
+import { IFuelForm } from "../../../components/fuelFilling/types";
 
 
 const fuelSlice = createSlice({

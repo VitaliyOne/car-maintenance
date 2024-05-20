@@ -29,7 +29,7 @@ const RepairCosts = () => {
   const onInputChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     const { name, value } = event.target;
     setFormData((state) => ({ ...state, [name]: value }));
-};
+  };
 
   return (
     <section>
@@ -39,7 +39,7 @@ const RepairCosts = () => {
           <MyInput onChange={onInputChange} name="typeRepair" value={formData.typeRepair}  placeholder="Вид ремонта" type="text"></MyInput>
           <MyInput onChange={onInputChange} name="priceWork" value={formData.priceWork} placeholder="Стоимость работ" type="text"></MyInput>
           <MyInput onChange={onInputChange} name="replacementPart" value={formData.replacementPart} placeholder="Запчасть" type="text"></MyInput>
-          <MyInput onChange={onInputChange} name="vendorСode" value={formData.vendorСode} placeholder="Артикул запчасти" type="text"></MyInput>
+          <MyInput onChange={onInputChange} name="vendorСode" value={formData.vendorСode} placeholder="Артикул" type="text"></MyInput>
           <InputAdornment onChange={onInputChange} name="price" value={formData.price} placeholder="Цена запчасти" type="number" span="руб"></InputAdornment>
           <InputAdornment onChange={onInputChange} name="mileage" value={formData.mileage} placeholder="Пробег" type="number" span="км"></InputAdornment>
         </div>

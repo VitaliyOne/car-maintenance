@@ -2,10 +2,10 @@ import { useState } from "react"
 import MyButton from "./UI/button/MyButton"
 import RepairCosts from "./repairCosts/RepairCosts"
 import Tuning from "./Tuning"
-import TechnicalMaintenance from "./TechnicalMaintenance"
+import TechnicalMaintenance from "./technicalMaintenance/TechnicalMaintenance"
 import Statistics from "./Statistics"
-import FuelFilling from "./FuelFilling/FuelFilling"
-import OilСhange from "./OilChange/OilСhange"
+import FuelFilling from "./fuelFilling/FuelFilling"
+import OilСhange from "./oilChange/OilСhange"
 
 enum Tab {
   FUEL_CONSUMPTION = 'FUEL_CONSUMPTION',

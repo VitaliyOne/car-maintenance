@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { INITIAL_STATE, REDUCER_PATH } from "./const";
-import { IOilChangeForm } from "../../../components/OilChange/types";
+import { IOilChangeForm } from "../../../components/oilChange/types";
 
 
 

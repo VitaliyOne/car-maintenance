@@ -46,7 +46,7 @@ const RepairCosts = () => {
         <div className="infoOilСhange">
           <MyInput onChange={onInputChange} name="comment" value={formData.comment} placeholder="Комментарий" type="text"></MyInput>
         </div>
-        <MyButton children="Сохранить"></MyButton>
+        <MyButton onClick={onSaveRepairCostsInfo} children="Сохранить"></MyButton>
       </form>
     </section>
   )

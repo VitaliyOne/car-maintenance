@@ -8,6 +8,7 @@ import { DEFAULT_REPAIR_COSTS_FORM_DATA } from './const';
 import { IRepairCostsForm } from './types';
 import useAppDispatch from '../../hooks/useAppDispatch';
 import { addRepairCostsInfo } from '../../store/reducers/repair/slice';
+import uniqid from 'uniqid';
 
 const RepairCosts = () => {
   const dateTime = useAppSelector((state) => state.localTime.time)
@@ -16,13 +17,13 @@ const RepairCosts = () => {
 
   const onSaveRepairCostsInfo = () => {
     dispatch(
-        addRepairCostsInfo({
-            ...formData
-        })
+      addRepairCostsInfo({
+        ...formData, id: uniqid()
+      })
     );
 
     resetFormData()
-}
+  }
 
   const resetFormData = () => setFormData(DEFAULT_REPAIR_COSTS_FORM_DATA);
 
@@ -36,7 +37,7 @@ const RepairCosts = () => {
       <time className="time"><img src={IconRepairCosts} alt="IconRepairCosts" style={{ height: "30px" }} /> &nbsp;{dateTime}</time>
       <form>
         <div className="infoOilСhange">
-          <MyInput onChange={onInputChange} name="typeRepair" value={formData.typeRepair}  placeholder="Вид ремонта" type="text"></MyInput>
+          <MyInput onChange={onInputChange} name="typeRepair" value={formData.typeRepair} placeholder="Вид ремонта" type="text"></MyInput>
           <MyInput onChange={onInputChange} name="priceWork" value={formData.priceWork} placeholder="Стоимость работ" type="text"></MyInput>
           <MyInput onChange={onInputChange} name="replacementPart" value={formData.replacementPart} placeholder="Запчасть" type="text"></MyInput>
           <MyInput onChange={onInputChange} name="vendorСode" value={formData.vendorСode} placeholder="Артикул" type="text"></MyInput>

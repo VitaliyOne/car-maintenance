@@ -1,5 +1,6 @@
 export interface IFuelForm {
-  id: number,
+  id: string,
+  date: number,
   amount: number,
   price: number,
   mileage: number | string,

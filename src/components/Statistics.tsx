@@ -2,7 +2,7 @@ import Stats from '/stats.svg';
 import useAppSelector from "../hooks/useAppSelector";
 
 const Statistics = () => {
-  const dateTime = useAppSelector((state) => state.localTime.time)
+  const dateTime = useAppSelector((state) => state.localTime.time);
   const cars = useAppSelector((state) => state.cars.cars || []);
   const fuelsInfo = useAppSelector((state) => state.fuels.fuels || []);
   const oilChangeInfo = useAppSelector((state) => state.oilChange.oilChanges || []);
@@ -29,7 +29,8 @@ const Statistics = () => {
               <tbody>
                 {fuelsInfo.map((fuel) => (
                   <tr key={fuel.id}>
-                    <td>{new Date(fuel.id).toLocaleDateString()}</td>
+                    <td>{fuel.id}</td>
+                    <td>{new Date(fuel.date).toLocaleDateString()}</td>
                     <td>{fuel.amount}</td>
                     <td>{fuel.price}</td>
                     <td>{fuel.mileage}</td>
@@ -61,7 +62,7 @@ const Statistics = () => {
               <tbody>
                 {oilChangeInfo.map((oilChange) => (
                   <tr key={oilChange.id}>
-                    <td>{new Date(oilChange.id).toLocaleDateString()}</td>
+                    <td>{new Date(oilChange.date).toLocaleDateString()}</td>
                     <td>{oilChange.mileage}</td>
                     <td>{oilChange.price}</td>
                     <td>{oilChange.oilViscosity}</td>
@@ -95,7 +96,7 @@ const Statistics = () => {
               <tbody>
                 {repairCostsInfo.map((repairCosts) => (
                   <tr key={repairCosts.id}>
-                    <td>{new Date(repairCosts.id).toLocaleDateString()}</td>
+                    <td>{new Date(repairCosts.date).toLocaleDateString()}</td>
                     <td>{repairCosts.typeRepair}</td>
                     <td>{repairCosts.priceWork}</td>
                     <td>{repairCosts.replacementPart}</td>

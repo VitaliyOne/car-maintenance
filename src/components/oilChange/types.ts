@@ -1,5 +1,6 @@
 export interface IOilChangeForm {
-  id: number,
+  id: string,
+  date: number,
   mileage: number,
   price: number,
   oilViscosity: string,

@@ -3,13 +3,15 @@ import carsSlice from './reducers/cars/slice';
 import fuelSlice from './reducers/fuels/slice';
 import oilChangeSlice from './reducers/oil/slice';
 import localTimeSlice from './reducers/localTime/slice';
+import repairCostsSlice from './reducers/repair/slice';
 
 
 const rootReducer = combineReducers({
   cars: carsSlice.reducer,
   fuels: fuelSlice.reducer,
   oilChange: oilChangeSlice.reducer,
-  localTime: localTimeSlice.reducer
+  localTime: localTimeSlice.reducer,
+  repairCosts: repairCostsSlice.reducer
 });
 
 export const store = configureStore({

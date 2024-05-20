@@ -10,7 +10,9 @@ import { IRepairCostsForm } from './types';
 const RepairCosts = () => {
   const dateTime = useAppSelector((state) => state.localTime.time)
   const [formData, setFormData] = useState<IRepairCostsForm>(DEFAULT_REPAIR_COSTS_FORM_DATA);
-  
+
+  const resetFormData = () => setFormData(DEFAULT_REPAIR_COSTS_FORM_DATA);
+
   const onInputChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     const { name, value } = event.target;
     setFormData((state) => ({ ...state, [name]: value }));

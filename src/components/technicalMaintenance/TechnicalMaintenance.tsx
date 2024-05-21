@@ -6,10 +6,27 @@ import MyInput from "../UI/input/MyInput"
 import Maintenance from '/public/maintenance2.png';
 import { ITechnicalMaintenanceForm } from "./types";
 import { DEFAULT_TECHNICAL_MAINTENANCE_FORM_DATA } from "./const";
+import { generateUniqueId } from "../uniqId";
+import useAppDispatch from "../../hooks/useAppDispatch";
+import { addTechnicalMaintenancesInfo } from "../../store/reducers/technicalMaintenance/slice";
 
 const TechnicalMaintenance = () => {
   const dateTime = useAppSelector((state) => state.localTime.time);
   const [formData, setFormData] = useState<ITechnicalMaintenanceForm>(DEFAULT_TECHNICAL_MAINTENANCE_FORM_DATA);
+
+  const dispatch = useAppDispatch();
+
+  const onSaveTechnicalMaintenancesInfo = () => {
+    dispatch(
+      addTechnicalMaintenancesInfo({
+        ...formData, id: generateUniqueId()
+      })
+    );
+
+    resetFormData()
+  }
+
+  const resetFormData = () => setFormData(DEFAULT_TECHNICAL_MAINTENANCE_FORM_DATA);
 
   const onInputChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     const { name, value } = event.target;
@@ -31,7 +48,7 @@ const TechnicalMaintenance = () => {
         <div className="infoOilСhange">
           <MyInput onChange={onInputChange} name="comment" value={formData.comment} placeholder="Комментарий" type="text"></MyInput>
         </div>
-        <MyButton children="Сохранить"></MyButton>
+        <MyButton onClick={onSaveTechnicalMaintenancesInfo} children="Сохранить"></MyButton>
       </form>
     </section>
   )

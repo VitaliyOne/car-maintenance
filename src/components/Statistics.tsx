@@ -7,6 +7,7 @@ const Statistics = () => {
   const fuelsInfo = useAppSelector((state) => state.fuels.fuels || []);
   const oilChangeInfo = useAppSelector((state) => state.oilChange.oilChanges || []);
   const repairCostsInfo = useAppSelector((state) => state.repairCosts.repairCosts || []);
+  const technicalMaintenancesInfo = useAppSelector((state) => state.technicalMaintenance.technicalMaintenances)
 
   return (
     <section>
@@ -109,6 +110,42 @@ const Statistics = () => {
             </table>
           ) : (
             <h1 style={{ margin: '15px 0' }}>Нет данных о ремонтах</h1>
+          )
+        }
+      </div>
+      <div className="infoStats">
+        {
+          technicalMaintenancesInfo && technicalMaintenancesInfo.length > 0 ? (
+            <table style={{ borderCollapse: 'collapse' }}>
+              <thead>
+                <tr>
+                  <th>Дата</th>
+                  <th>Вид раемонта</th>
+                  <th>Стоимость работ</th>
+                  <th>Запчасть</th>
+                  <th>Артикул запчасти</th>
+                  <th>Цена запчасти</th>
+                  <th>Пробег</th>
+                  <th>Комментарий</th>
+                </tr>
+              </thead>
+              <tbody>
+                {technicalMaintenancesInfo.map((technicalMaintenances) => (
+                  <tr key={technicalMaintenances.id}>
+                    <td>{new Date(technicalMaintenances.date).toLocaleDateString()}</td>
+                    <td>{technicalMaintenances.typeService}</td>
+                    <td>{technicalMaintenances.priceWork}</td>
+                    <td>{technicalMaintenances.consumables}</td>
+                    <td>{technicalMaintenances.vendorСode}</td>
+                    <td>{technicalMaintenances.price}</td>
+                    <td>{technicalMaintenances.mileage}</td>
+                    <td>{technicalMaintenances.comment}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ) : (
+            <h1 style={{ margin: '15px 0' }}>Нет данных об обслуживании</h1>
           )
         }
       </div>

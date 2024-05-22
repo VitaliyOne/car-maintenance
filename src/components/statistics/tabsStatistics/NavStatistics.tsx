@@ -38,7 +38,7 @@ import TuningTable from "./TuningTable";
     };
     return (
       <div>
-        <nav className="navMenu">
+        <nav className="navMenuStatistics">
           <MyButton
             children="Заправка"
             onClick={() => setSelectedItem(Tab.FUEL_CONSUMPTION)}

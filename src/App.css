@@ -75,6 +75,11 @@
     gap: 15px;
 }
 
+.navMenuStatistics{
+    display: flex;
+    gap: 15px;
+}
+
 .time{
     display: inline-block;
     vertical-align: top; 

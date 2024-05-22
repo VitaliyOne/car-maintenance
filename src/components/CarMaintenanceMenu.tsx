@@ -3,7 +3,7 @@ import MyButton from "./UI/button/MyButton"
 import RepairCosts from "./repairCosts/RepairCosts"
 import Tuning from "./tuning/Tuning"
 import TechnicalMaintenance from "./technicalMaintenance/TechnicalMaintenance"
-import Statistics from "./Statistics"
+import Statistics from "./statistics/Statistics"
 import FuelFilling from "./fuelFilling/FuelFilling"
 import OilСhange from "./oilChange/OilСhange"
 

@@ -7,9 +7,9 @@ const Statistics = () => {
   const cars = useAppSelector((state) => state.cars.cars || []);
   return (
     <section>
-      <time className="time" style={{float: 'left'}}><img src={Stats} alt="IconRepairCosts" style={{ height: "30px" }} /> &nbsp;{dateTime}</time>
+      <time className="time" style={{ float: 'left' }}><img src={Stats} alt="IconRepairCosts" style={{ height: "30px" }} /> &nbsp;{dateTime}</time>
       {cars && cars.length > 0 ? <h1 style={{ margin: '15px 0' }}>Выбран авто: {cars[0].name}</h1> : <h1 style={{ margin: '15px 0' }}>Для просмотра статискики укажите авто</h1>}
-      <NavStatistics/>
+      <NavStatistics />
     </section>
   )
 }

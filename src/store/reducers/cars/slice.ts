@@ -9,8 +9,13 @@ const carsSlice = createSlice({
     addCar: (state, action: PayloadAction<Cars>) => {
       state.cars.unshift(action.payload);
     },
-    deleteCar: (state) => {
-      state.cars = [];
+    selectCar: (state, action: PayloadAction<string>) => {
+      state.cars = state.cars.map(car =>
+        car.id === action.payload ? { ...car, selected: true } : { ...car, selected: false }
+      );
+    },
+    deleteCar: (state, action) => {
+      state.cars = state.cars.filter(car => car.id !== action.payload);
     },
     updateCar: (state, action: PayloadAction<Cars>) => {
       const { payload } = action;
@@ -20,6 +25,6 @@ const carsSlice = createSlice({
   }
 })
 
-export const { addCar, updateCar, deleteCar } = carsSlice.actions;
+export const { addCar, selectCar, updateCar, deleteCar } = carsSlice.actions;
 
 export default carsSlice;

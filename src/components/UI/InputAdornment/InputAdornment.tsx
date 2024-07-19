@@ -1,3 +1,4 @@
+import React from "react";
 import classes from "./InputAdornment.module.css";
 
 interface InputAdornmentProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -7,17 +8,18 @@ interface InputAdornmentProps extends React.InputHTMLAttributes<HTMLInputElement
   value?: string | number;
 }
 
-const InputAdornment = (props: InputAdornmentProps) => {
+const InputAdornment = React.forwardRef<HTMLInputElement, InputAdornmentProps>((props, ref) => {
   return (
     <div className={classes.inputAdornment}>
-      <input className={classes.input}
+      <input 
+        className={classes.input}
         {...props}
+        ref={ref} 
         placeholder={props.placeholder}
-      >
-      </input>
+      />
       <span className={classes.span}>{props.span}</span>
     </div>
-  )
-}
+  );
+});
 
-export default InputAdornment
+export default InputAdornment;

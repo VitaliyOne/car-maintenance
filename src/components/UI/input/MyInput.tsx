@@ -1,3 +1,4 @@
+import React from "react";
 import classes from "./MyInput.module.css";
 
 interface MyInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -5,15 +6,16 @@ interface MyInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   type: string;
   value?: string;
 }
-const MyInput = (props: MyInputProps) => {
+
+const MyInput = React.forwardRef<HTMLInputElement, MyInputProps>((props, ref) => {
   return (
-      <input
-        className={classes.myInput}
-        {...props}
-        placeholder={props.placeholder}
-      >
-      </input>
+    <input
+      className={classes.myInput}
+      {...props}
+      ref={ref}
+      placeholder={props.placeholder}
+    />
   );
-};
+});
 
 export default MyInput;

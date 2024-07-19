@@ -1,23 +1,19 @@
-import { ChangeEvent } from 'react';
+import React from "react";
 import classes from "./MyTextarea.module.css";
 
-interface MyTextareaProps {
+interface MyTextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   placeholder: string;
-  value?: string;
-  name?: string;
-  onChange?: (event: ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
-const MyTextarea = (props: MyTextareaProps) => {
+const MyTextarea = React.forwardRef<HTMLTextAreaElement, MyTextareaProps>((props, ref) => {
   return (
     <textarea
       {...props}
+      ref={ref}
       className={classes.myTextarea}
       placeholder={props.placeholder}
-      value={props.value}
-      onChange={props.onChange}
     />
   );
-}
+});
 
 export default MyTextarea;

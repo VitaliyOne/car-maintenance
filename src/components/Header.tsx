@@ -4,12 +4,16 @@ import MyButton from "./UI/button/MyButton";
 import useAppDispatch from "../hooks/useAppDispatch";
 import { addCar, deleteCar, selectCar } from "../store/reducers/cars/slice";
 import useAppSelector from "../hooks/useAppSelector";
+import deleteIcon from '/delete.svg';
+import editIcon from '/edit.svg';
+import addCarIcon from '/add-car.svg';
 import Select from 'react-select';
 
 const Header = () => {
     const dispatch = useAppDispatch();
     const cars = useAppSelector((state) => state.cars.cars || []);
     const [nameCar, setNameCar] = useState<string>("");
+    const [showForm, setShowForm] = useState<boolean>(false);
 
     useEffect(() => {
         if (cars.length > 0 && !cars.some(car => car.selected)) {
@@ -31,6 +35,10 @@ const Header = () => {
     const onDeleteCar = (carId: string) => {
         dispatch(deleteCar(carId));
     };
+    const onShowForm = () => {
+        setShowForm(!showForm)
+        setNameCar(carOptions[0].label)
+    }
 
     const carOptions = cars.map(car => ({
         label: car.name,
@@ -40,10 +48,12 @@ const Header = () => {
     const selectedCar = cars.find(car => car.selected) || cars[0];
 
     return (
-        <header>
+        <header className="formInformationYourCar">
             {cars && cars.length > 0 ? (
-                <div className="formInformationYourCar">
+                <div className="selectCars">
                     <Select
+                        className="react-select-container"
+                        classNamePrefix="react-select"
                         options={carOptions}
                         value={selectedCar ? { label: selectedCar.name, value: selectedCar.id } : null}
                         onChange={(selectedOption) => {
@@ -53,28 +63,36 @@ const Header = () => {
                         }}
                     />
                     {selectedCar && (
-                        <button onClick={() => onDeleteCar(selectedCar.id)}>Удалить</button>
+                        <nav className="headerNavIcon">
+                            <img onClick={() => onShowForm()} src={editIcon} alt="Изменить" className="navIconItem" />
+                            <img onClick={() => onDeleteCar(selectedCar.id)} src={addCarIcon} alt="Добавить" className="navIconItem" />
+                            <img onClick={() => onDeleteCar(selectedCar.id)} src={deleteIcon} alt="Удалить" className="navIconItem" />
+                        </nav>
                     )}
-                    <span>edit</span>
-                    <span>new</span>
-                    <form className="formInformationCar" onSubmit={(e) => { e.preventDefault(); onSaveNameCar(); }}>
-                        < MyInput
-                            type="text"
-                            placeholder="Ваш авто"
-                            value={nameCar}
-                            onChange={(event) => setNameCar(event.target.value)}
-                        />
-                    </form>
                 </div >
-            ) : (<form className="formInformationCar" onSubmit={(e) => { e.preventDefault(); onSaveNameCar(); }}>
-                < MyInput
-                    type="text"
-                    placeholder="Ваш авто"
-                    value={nameCar}
-                    onChange={(event) => setNameCar(event.target.value)}
-                />
-                <MyButton children="Сохранить" onClick={onSaveNameCar} style={{ marginLeft: "10px" }} />
-            </form>)}
+            ) : (
+                <form style={{ display: 'flex', flexDirection: 'row', maxWidth: '300px' }} onSubmit={(e) => { e.preventDefault(); onSaveNameCar(); }}>
+                    < MyInput
+                        type="text"
+                        placeholder="Назовите авто"
+                        value={nameCar}
+                        onChange={(event) => setNameCar(event.target.value)}
+                    />
+                    <MyButton children="Сохранить" onClick={onSaveNameCar} style={{ marginLeft: "10px" }} />
+                </form>
+            )}
+            {showForm ? (
+                <form style={{ display: 'flex', flexDirection: 'row', maxWidth: '300px' }} onSubmit={(e) => { e.preventDefault(); onSaveNameCar(); }}>
+                    < MyInput
+                        type="text"
+                        placeholder="Название авто"
+                        value={nameCar}
+                        onChange={(event) => setNameCar(event.target.value)}
+                    />
+                    <MyButton children="Изменить" onClick={onSaveNameCar} style={{ marginLeft: "10px" }} />
+                </form>
+            ) : ('')}
+
 
         </header >
     )

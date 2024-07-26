@@ -17,6 +17,54 @@
     border: 1px solid rgb(100, 100, 100);
 }
 
+.selectContainer {
+    width: 200px;
+    margin: 20px;
+    position: relative;
+}
+
+.selectHeader {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.arrow {
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.selectList {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-height: 200px;
+    scrollbar-width: thin;
+    overflow: auto;
+    scrollbar-color: #f8f9fa #fff;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.selectListItem {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.selectListItem:hover {
+    background-color: #f1f1f1;
+}
+
 .selectCars {
     display: flex;
     flex-direction: row;

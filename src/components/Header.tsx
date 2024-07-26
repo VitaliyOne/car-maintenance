@@ -8,6 +8,7 @@ import deleteIcon from '/delete.svg';
 import editIcon from '/edit.svg';
 import addCarIcon from '/add-car.svg';
 import Select from 'react-select';
+import CarsSelect from "./carList";
 
 const Header = () => {
     const dispatch = useAppDispatch();
@@ -49,6 +50,7 @@ const Header = () => {
 
     return (
         <header className="formInformationYourCar">
+            <CarsSelect/>
             {cars && cars.length > 0 ? (
                 <div className="selectCars">
                     <Select
@@ -92,8 +94,6 @@ const Header = () => {
                     <MyButton children="Изменить" onClick={onSaveNameCar} style={{ marginLeft: "10px" }} />
                 </form>
             ) : ('')}
-
-
         </header >
     )
 }

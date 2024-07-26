@@ -7,8 +7,7 @@ import useAppSelector from "../hooks/useAppSelector";
 import deleteIcon from '/delete.svg';
 import editIcon from '/edit.svg';
 import addCarIcon from '/add-car.svg';
-import Select from 'react-select';
-import CarsSelect from "./carList";
+import CarsSelect from "./СarList";
 
 const Header = () => {
     const dispatch = useAppDispatch();
@@ -50,20 +49,9 @@ const Header = () => {
 
     return (
         <header className="formInformationYourCar">
-            <CarsSelect/>
             {cars && cars.length > 0 ? (
                 <div className="selectCars">
-                    <Select
-                        className="react-select-container"
-                        classNamePrefix="react-select"
-                        options={carOptions}
-                        value={selectedCar ? { label: selectedCar.name, value: selectedCar.id } : null}
-                        onChange={(selectedOption) => {
-                            if (selectedOption) {
-                                dispatch(selectCar(selectedOption.value));
-                            }
-                        }}
-                    />
+                    <CarsSelect />
                     {selectedCar && (
                         <nav className="headerNavIcon">
                             <img onClick={() => onShowForm()} src={editIcon} alt="Изменить" className="navIconItem" />

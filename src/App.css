@@ -72,37 +72,6 @@
     gap: 10px;
 }
 
-.react-select-container {
-    width: 300px;
-}
-
-.react-select-container .react-select__control--is-focused {
-    border-color: #ccc !important;
-    box-shadow: none;
-    background-color: transparent !important;
-}
-
-.react-select-container .react-select__option--is-selected {
-    background-color: #b6b6b6;
-    color: black;
-    cursor: default;
-    font-weight: 600;
-}
-
-.react-select-container .react-select__option--is-focused {
-    background-color: #e9e9e9 !important;
-}
-
-.react-select-container .react-select__menu {
-    border-radius: 4px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.react-select-container .react-select__option {
-    padding: 8px 12px;
-    cursor: pointer;
-}
-
 .headerNavIcon {
     display: flex;
     gap: 10px

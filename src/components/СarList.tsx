@@ -2,6 +2,7 @@
 import { useState } from "react";
 import useAppSelector from "../hooks/useAppSelector";
 import { Cars } from "../types";
+
 const CarsSelect = () => {
     const cars = useAppSelector((state) => state.cars.cars || []);
     const [isOpen, setIsOpen] = useState(false);

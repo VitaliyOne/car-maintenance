@@ -7,7 +7,7 @@ import useAppSelector from "../hooks/useAppSelector";
 import deleteIcon from '/delete.svg';
 import editIcon from '/edit.svg';
 import addCarIcon from '/add-car.svg';
-import CarsSelect from "./СarList";
+import CarsSelect from "./CarList";
 
 const Header = () => {
     const dispatch = useAppDispatch();

@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import MyInput from "./UI/input/MyInput"
 import MyButton from "./UI/button/MyButton";
 import useAppDispatch from "../hooks/useAppDispatch";
-import { addCar, deleteCar, selectCar } from "../store/reducers/cars/slice";
+import { addCar, deleteCar, selectCar, updateCar } from "../store/reducers/cars/slice";
 import useAppSelector from "../hooks/useAppSelector";
 import deleteIcon from '/src/assets/img/delete.svg';
 import editIcon from '/src/assets/img/edit.svg';
 import CarsSelect from "./CarsSelect";
+import { Cars } from "../types";
 
 const Header = () => {
     const dispatch = useAppDispatch();
@@ -32,6 +33,15 @@ const Header = () => {
         dispatch(addCar(newCar));
         dispatch(selectCar(newCar.id));
         setNameCar('');
+    }
+
+    const onEditNameCar = () => {
+        const carToUpdate: Cars = {
+            id: selectedCar.id,
+            name: nameCar,
+            selected: true
+        }
+        dispatch(updateCar(carToUpdate));
     }
 
     const onDeleteCar = (carId: string) => {
@@ -70,14 +80,14 @@ const Header = () => {
             {showEditForm ? (
                 <div>
                     <h3>Изменить имя:</h3>
-                    <form className="formCarContainer" onSubmit={(e) => { e.preventDefault(); onSaveNameCar(); setShowEditForm(!showEditForm) }}>
+                    <form className="formCarContainer" onSubmit={(e) => { e.preventDefault(); onEditNameCar(); setShowEditForm(!showEditForm) }}>
                         < MyInput
                             type="text"
                             placeholder="Название авто"
                             value={nameCar}
                             onChange={(event) => setNameCar(event.target.value)}
                         />
-                        <MyButton children="Изменить" onClick={() => { onSaveNameCar(), setShowEditForm(!showEditForm) }} />
+                        <MyButton children="Изменить" onClick={() => { onEditNameCar(), setShowEditForm(!showEditForm) }} />
                         <MyButton children="Отменить" onClick={() => { setShowEditForm(!showEditForm) }} />
                     </form>
                 </div>

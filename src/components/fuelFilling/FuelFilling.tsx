@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Fuel from '/iconFuel.png';
+import Fuel from '/src/assets/img/iconFuel.png';
 import { IFuelForm } from "./types";
 import InputAdornment from "../UI/InputAdornment/InputAdornment";
 import MyInput from "../UI/input/MyInput";

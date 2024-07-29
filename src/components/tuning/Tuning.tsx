@@ -1,4 +1,4 @@
-import TuningIcon from '/public/tuningIcon.png';
+import TuningIcon from '/src/assets/img/tuningIcon.png';
 import MyInput from '../UI/input/MyInput';
 import MyButton from '../UI/button/MyButton';
 import InputAdornment from '../UI/InputAdornment/InputAdornment';

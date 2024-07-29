@@ -1,5 +1,5 @@
 import { useState } from "react";
-import OilLamp from '/public/oilLamp.png';
+import OilLamp from '/src/assets/img/oilLamp.png';
 import InputAdornment from "../UI/InputAdornment/InputAdornment";
 import MySelect from "../UI/select/MySelect";
 import MyInput from "../UI/input/MyInput";

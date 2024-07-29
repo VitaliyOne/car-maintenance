@@ -1,4 +1,4 @@
-import Stats from '/stats.svg';
+import Stats from '/src/assets/img/stats.svg';
 import useAppSelector from "../../hooks/useAppSelector";
 import NavStatistics from './tabsStatistics/NavStatistics';
 

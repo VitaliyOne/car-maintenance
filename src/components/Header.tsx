@@ -4,9 +4,8 @@ import MyButton from "./UI/button/MyButton";
 import useAppDispatch from "../hooks/useAppDispatch";
 import { addCar, deleteCar, selectCar } from "../store/reducers/cars/slice";
 import useAppSelector from "../hooks/useAppSelector";
-import deleteIcon from '/delete.svg';
-import editIcon from '/edit.svg';
-import addCarIcon from '/add-car.svg';
+import deleteIcon from '/src/assets/img/delete.svg';
+import editIcon from '/src/assets/img/edit.svg';
 import CarsSelect from "./CarList";
 
 const Header = () => {
@@ -55,7 +54,6 @@ const Header = () => {
                     {selectedCar && (
                         <nav className="headerNavIcon">
                             <img onClick={() => onShowForm()} src={editIcon} alt="Изменить" className="navIconItem" />
-                            <img onClick={() => onDeleteCar(selectedCar.id)} src={addCarIcon} alt="Добавить" className="navIconItem" />
                             <img onClick={() => onDeleteCar(selectedCar.id)} src={deleteIcon} alt="Удалить" className="navIconItem" />
                         </nav>
                     )}

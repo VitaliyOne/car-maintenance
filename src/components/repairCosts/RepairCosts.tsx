@@ -1,4 +1,4 @@
-import IconRepairCosts from '/public/repairCosts.png';
+import IconRepairCosts from '/src/assets/img/repairCosts.png';
 import MyInput from "../UI/input/MyInput";
 import InputAdornment from "../UI/InputAdornment/InputAdornment";
 import MyButton from "../UI/button/MyButton";

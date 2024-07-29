@@ -1,26 +1,12 @@
-.formInformationCar {
-    display: flex;
-    background: white;
-    height: auto;
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid rgb(100, 100, 100);
-}
-
-.formInformationYourCar {
+.headerContainer {
     display: flex;
     flex-direction: column;
     gap: 10px;
     background: white;
     padding: 20px;
     border-radius: 8px;
-    border: 1px solid rgb(100, 100, 100);
-}
-
-.selectContainer {
-    position: relative;
-    min-width: 200px;
-    width: auto;
+    border: 1px solid #646464;
+    text-align: start;
 }
 
 .formCarContainer {
@@ -29,6 +15,12 @@
     max-width: 400px;
     height: 41px;
     gap: 10px
+}
+
+.selectContainer {
+    position: relative;
+    min-width: 200px;
+    width: auto;
 }
 
 .selectHeader {

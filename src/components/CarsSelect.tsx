@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import useAppSelector from "../hooks/useAppSelector";
 import useAppDispatch from "../hooks/useAppDispatch";
 import { Cars } from "../types";
@@ -11,15 +11,16 @@ interface IPropsCatsSelect {
 const CarsSelect = (props: IPropsCatsSelect) => {
     const cars = useAppSelector((state) => state.cars.cars || []);
     const selectedCar = cars.find(car => car.selected) || cars[0];
-    const [isOpen, setisOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
     const dispatch = useAppDispatch();
+    const dropdownRef = useRef<HTMLDivElement | null>(null);
 
     const toggleDropdown = () => {
-        setisOpen(!isOpen);
+        setIsOpen(!isOpen);
     };
 
     const handleSelectCar = (car: Cars) => {
-        setisOpen(false);
+        setIsOpen(false);
         dispatch(selectCar(car.id));
     };
 
@@ -27,10 +28,24 @@ const CarsSelect = (props: IPropsCatsSelect) => {
         toggleDropdown();
         props.onShowAddForm();
     }
+
+    const handleClickOutside = (event: MouseEvent) => {
+        if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+            setIsOpen(false);
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
     const carList = cars.filter((car) => car.name !== selectedCar.name)
 
     return (
-        <div className="selectContainer">
+        <div className="selectContainer" ref={dropdownRef}>
             <div className="selectHeader" onClick={toggleDropdown}>
                 {selectedCar.name}
                 <span className="arrow">{isOpen ? '▲' : '▼'}</span>

@@ -42,6 +42,7 @@ const Header = () => {
             selected: true
         }
         dispatch(updateCar(carToUpdate));
+        setNameCar('');
     }
 
     const onDeleteCar = (carId: string) => {
@@ -88,7 +89,7 @@ const Header = () => {
                             onChange={(event) => setNameCar(event.target.value)}
                         />
                         <MyButton children="Изменить" onClick={() => { onEditNameCar(), setShowEditForm(!showEditForm) }} />
-                        <MyButton children="Отменить" onClick={() => { setShowEditForm(!showEditForm) }} />
+                        <MyButton children="Отменить" onClick={() => { setShowEditForm(!showEditForm), setNameCar(''); }} />
                     </form>
                 </div>
             ) : ('')}
@@ -103,7 +104,7 @@ const Header = () => {
                             onChange={(event) => setNameCar(event.target.value)}
                         />
                         <MyButton children="Добавить" onClick={() => { onSaveNameCar(), setShowAddForm(!showAddForm) }} />
-                        <MyButton children="Закрыть" onClick={() => { setShowAddForm(!showAddForm) }} />
+                        <MyButton children="Закрыть" onClick={() => { setShowAddForm(!showAddForm), setNameCar(''); }} />
                     </form>
                 </div>
             ) : ("")}

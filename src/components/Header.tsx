@@ -80,7 +80,7 @@ const Header = () => {
             ) : ('')}
             {showEditForm ? (
                 <div>
-                    <h3>Изменить имя:</h3>
+                    <p className="textSmall">Изменить:</p>
                     <form className="formCarContainer" onSubmit={(e) => { e.preventDefault(); onEditNameCar(); setShowEditForm(!showEditForm) }}>
                         < MyInput
                             type="text"
@@ -95,7 +95,7 @@ const Header = () => {
             ) : ('')}
             {showAddForm ? (
                 <div>
-                    <h3>Добавить авто:</h3>
+                    <p className="textSmall">Добавить:</p>
                     <form className="formCarContainer" onSubmit={(e) => { e.preventDefault(); onSaveNameCar(); setShowAddForm(!showAddForm) }}>
                         < MyInput
                             type="text"

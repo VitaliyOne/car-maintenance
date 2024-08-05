@@ -12,6 +12,7 @@
 .formCarContainer {
     display: flex;
     flex-direction: row;
+    align-items: center;
     max-width: 400px;
     height: 41px;
     gap: 10px
@@ -161,6 +162,8 @@
 .infoStats {
     display: grid;
 }
+
+.textSmall{font-size: 13px;}
 
 table {
     border-collapse: collapse;

@@ -16,6 +16,6 @@
 
 body {
   background-color: rgba(181, 181, 181, 0.2);
-  background: url('/background.webp');
+  background: url('/src/assets/img/background.webp');
   background-size: 100% auto;
 }

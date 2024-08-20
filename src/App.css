@@ -107,6 +107,7 @@
     padding: 20px;
     border-radius: 8px;
     border: 1px solid rgb(100, 100, 100);
+    position: relative;
 }
 
 .footer {
@@ -114,7 +115,7 @@
     padding: 5px;
     background-color: rgb(255, 255, 255);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     align-items: center;
     border: 1px solid rgb(100, 100, 100);
     border-radius: 8px;
@@ -185,4 +186,27 @@ td {
 
 tr:nth-child(even) td {
     background-color: #f2f2f2;
+}
+
+.tab{
+    padding: 5px 15px;
+    color: rgb(13, 13, 14);
+    font-size: 15px;
+    background: transparent;
+    cursor: pointer;
+    border: 1px solid rgba(51, 51, 51, 0.2);
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    transition: transform 200ms ease;
+    text-decoration: none;
+}
+
+.tab:hover{
+    background: rgba(51, 51, 51, 0.2);
+    columns: #000;
+}
+
+.active-tab {
+    border-bottom: 1mm solid gray;
+    cursor: default;
 }

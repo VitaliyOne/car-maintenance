@@ -19,3 +19,9 @@ body {
   background: url('/src/assets/img/background.webp');
   background-size: 100% auto;
 }
+
+@media (max-width: 768px) {
+  #root{
+    padding: 1em;;
+  }
+}

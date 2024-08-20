@@ -1,80 +1,51 @@
-import { useState } from "react"
-import MyButton from "./UI/button/MyButton"
-import RepairCosts from "./repairCosts/RepairCosts"
-import Tuning from "./tuning/Tuning"
-import TechnicalMaintenance from "./technicalMaintenance/TechnicalMaintenance"
-import Statistics from "./statistics/Statistics"
-import FuelFilling from "./fuelFilling/FuelFilling"
-import OilСhange from "./oilChange/OilСhange"
+import { NavLink } from "react-router-dom"
+import RoutesConfig from "./RoutesConfig";
 
-enum Tab {
-  FUEL_CONSUMPTION = 'FUEL_CONSUMPTION',
-  OIL_CHANGE = "OIL_CHANGE",
-  REPAIR_COSTS = "REPAIR_COSTS",
-  TECHNICAL_MAINTENANCE = "TECHNICAL_MAINTENANCE",
-  STATISTICS = "STATISTICS",
-  TUNING = "TUNING"
-}
-
-type TabComponentsMap = {
-  [T in Tab]: React.FC
-}
-
-const tabs: TabComponentsMap = {
-  [Tab.FUEL_CONSUMPTION]: FuelFilling,
-  [Tab.OIL_CHANGE]: OilСhange,
-  [Tab.REPAIR_COSTS]: RepairCosts,
-  [Tab.TECHNICAL_MAINTENANCE]: TechnicalMaintenance,
-  [Tab.STATISTICS]: Statistics,
-  [Tab.TUNING]: Tuning
-}
 
 const CarMaintenanceMenu = () => {
-  const [selectedItem, setSelectedItem] = useState<`${Tab}`>(Tab.FUEL_CONSUMPTION);
-
-  const TabComponent = tabs[selectedItem];
-  const isActive = (tab: Tab) => selectedItem === tab;
-
-  const activeTab = {
-    borderBottom: '1mm solid gray', cursor: 'default',
-  };
 
   return (
     <main className="carMaintenanceMenu">
-      <nav className="navMenu">
-        <MyButton
-          children="Заправка"
-          onClick={() => setSelectedItem(Tab.FUEL_CONSUMPTION)}
-          style={isActive(Tab.FUEL_CONSUMPTION) ? activeTab : {}}
-        />
-        <MyButton
-          children="Замена масла"
-          onClick={() => setSelectedItem(Tab.OIL_CHANGE)}
-          style={isActive(Tab.OIL_CHANGE) ? activeTab : {}}
-        />
-        <MyButton
-          children="Расходы на ремонт"
-          onClick={() => setSelectedItem(Tab.REPAIR_COSTS)}
-          style={isActive(Tab.REPAIR_COSTS) ? activeTab : {}}
-        />
-        <MyButton
-          children="Техническое обслуживание"
-          onClick={() => setSelectedItem(Tab.TECHNICAL_MAINTENANCE)}
-          style={isActive(Tab.TECHNICAL_MAINTENANCE) ? activeTab : {}}
-        />
-        <MyButton
-          children="Статистика"
-          onClick={() => setSelectedItem(Tab.STATISTICS)}
-          style={isActive(Tab.STATISTICS) ? activeTab : {}}
-        />
-        <MyButton
-          children="Тюнинг"
-          onClick={() => setSelectedItem(Tab.TUNING)}
-          style={isActive(Tab.TUNING) ? activeTab : {}}
-        />
+     <nav className="navMenu">
+        <NavLink
+          to="/fuel-filling"
+          className={({ isActive }) => (isActive ? "tab active-tab" : "tab")}
+        >
+          Заправка
+        </NavLink>
+        <NavLink
+          to="/oil-change"
+          className={({ isActive }) => (isActive ? "tab active-tab" : "tab")}
+        >
+          Замена масла
+        </NavLink>
+        <NavLink
+          to="/repair-costs"
+          className={({ isActive }) => (isActive ? "tab active-tab" : "tab")}
+        >
+          Расходы на ремонт
+        </NavLink>
+        <NavLink
+          to="/technical-maintenance"
+          className={({ isActive }) => (isActive ? "tab active-tab" : "tab")}
+        >
+          Техническое обслуживание
+        </NavLink>
+        <NavLink
+          to="/statistics"
+          className={({ isActive }) => (isActive ? "tab active-tab" : "tab")}
+        >
+          Статистика
+        </NavLink>
+        <NavLink
+          to="/tuning"
+          className={({ isActive }) => (isActive ? "tab active-tab" : "tab")}
+        >
+          Тюнинг
+        </NavLink>
       </nav>
-      <TabComponent />
-    </main >
+    <RoutesConfig />
+  </main>
   );
 }
 

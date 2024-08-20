@@ -10,12 +10,13 @@ const carsSlice = createSlice({
       state.cars.unshift(action.payload);
     },
     selectCar: (state, action: PayloadAction<string>) => {
-      state.cars = state.cars.map(car =>
-        car.id === action.payload ? { ...car, selected: true } : { ...car, selected: false }
-      );
+      state.selectedCarId = action.payload;
     },
-    deleteCar: (state, action) => {
+    deleteCar: (state, action: PayloadAction<string>) => {
       state.cars = state.cars.filter(car => car.id !== action.payload);
+      if (state.selectedCarId === action.payload) {
+        state.selectedCarId = state.cars[0]?.id || null;
+      }
     },
     updateCar: (state, action: PayloadAction<Cars>) => {
       const { payload } = action;

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import MyInput from "./UI/input/MyInput"
 import MyButton from "./UI/button/MyButton";
 import useAppDispatch from "../hooks/useAppDispatch";
@@ -12,23 +12,17 @@ import { Cars } from "../types";
 const Header = () => {
     const dispatch = useAppDispatch();
     const cars = useAppSelector((state) => state.cars.cars || []);
+    const selectedCarId = useAppSelector((state) => state.cars.selectedCarId);
+    const selectedCar = cars.find(car => car.id === selectedCarId) || cars[0];
     const [nameCar, setNameCar] = useState<string>("");
     const [showEditForm, setShowEditForm] = useState<boolean>(false);
     const [showAddForm, setShowAddForm] = useState<boolean>(false);
 
-    useEffect(() => {
-        if (cars.length > 0 && !cars.some(car => car.selected)) {
-            dispatch(selectCar(cars[0].id));
-        }
-    }, [cars, dispatch]);
-
-    const selectedCar = cars.find(car => car.selected) || cars[0];
 
     const onSaveNameCar = () => {
         const newCar = {
             id: new Date().toString(),
             name: nameCar,
-            selected: true
         };
         dispatch(addCar(newCar));
         dispatch(selectCar(newCar.id));
@@ -39,7 +33,6 @@ const Header = () => {
         const carToUpdate: Cars = {
             id: selectedCar.id,
             name: nameCar,
-            selected: true
         }
         dispatch(updateCar(carToUpdate));
         setNameCar('');

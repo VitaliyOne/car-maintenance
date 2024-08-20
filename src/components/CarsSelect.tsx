@@ -10,7 +10,8 @@ interface IPropsCatsSelect {
 
 const CarsSelect = (props: IPropsCatsSelect) => {
     const cars = useAppSelector((state) => state.cars.cars || []);
-    const selectedCar = cars.find(car => car.selected) || cars[0];
+    const selectedCarId = useAppSelector((state) => state.cars.selectedCarId);
+    const selectedCar = cars.find(car => car.id === selectedCarId) || cars[0];
     const [isOpen, setIsOpen] = useState(false);
     const dispatch = useAppDispatch();
     const dropdownRef = useRef<HTMLDivElement | null>(null);

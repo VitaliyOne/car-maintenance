@@ -36,7 +36,7 @@ const RepairCostsTable = () => {
               </tbody>
             </table>
           ) : (
-            <h1 style={{ margin: '15px 0' }}>Нет данных о ремонтах</h1>
+            <h2 className='mt-1r'>Нет данных о ремонтах</h2>
           )
         }
       </div>

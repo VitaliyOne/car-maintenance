@@ -40,6 +40,11 @@
     margin-left: 10px;
 }
 
+.ml-20{margin-left: 20px;}
+.mt-1r{margin-top: 1rem;}
+
+.icon{height: 20px;}
+
 .selectList {
     position: absolute;
     top: 100%;
@@ -121,6 +126,13 @@
     border-radius: 8px;
 }
 
+.socialIcons{    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
 .footer nav a:hover path {
     fill: #505050
 }
@@ -142,6 +154,10 @@
     grid-row-gap: 10px;
     justify-items: center;
 }
+
+.oilChangeInterval{text-align: left; margin-top: 10px; font-size: 13px;}
+
+
 
 .navMenu {
     display: grid;

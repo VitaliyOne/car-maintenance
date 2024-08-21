@@ -9,8 +9,8 @@ const Statistics = () => {
   const selectedCar = cars.find(car => car.id === selectedCarId) || cars[0];
   return (
     <section>
-      <time className="time" style={{ float: 'left' }}><img src={Stats} alt="IconRepairCosts" style={{ height: "30px" }} /> &nbsp;{dateTime}</time>
-      {cars && cars.length > 0 ? <h1 style={{ margin: '15px 0' }}>Данные по: {selectedCar.name}</h1> : <h1 style={{ margin: '15px 0' }}>Укажите авто</h1>}
+      <time className="time" style={{ float: 'left' }}><img src={Stats} alt="iconStatistics" className="icon" /> &nbsp;{dateTime}</time>
+      {cars && cars.length > 0 ? <h2 className='mt-1r'>Данные по: {selectedCar.name}</h2> : <h2 className='mt-1r'>Укажите авто</h2>}
       <NavStatistics />
     </section>
   )

@@ -35,7 +35,7 @@ const FuelFilling = () => {
 
   return (
     <section>
-      <time className="time"><img src={Fuel} alt="Fuel" style={{ height: "20px" }} /> &nbsp;{dateTime}</time>
+      <time className="time"><img src={Fuel} alt="Fuel" className="icon" /> &nbsp;{dateTime}</time>
       <form>
         <div className="infoFuelFilling">
           <InputAdornment onChange={onInputChange} name="amount" value={formData.amount} placeholder="Сумма заправки" type="number" span="руб" required></InputAdornment>
@@ -43,9 +43,7 @@ const FuelFilling = () => {
           <InputAdornment onChange={onInputChange} name="mileage" value={formData.mileage} placeholder="Пробег" type="number" span="км" required></InputAdornment>
           <MyInput autoComplete="off" onChange={onInputChange} name="comment" value={formData.comment} placeholder="Коментарий" type="text"></MyInput>
         </div>
-        <div style={{ marginTop: "10px" }}>
           <MyButton onClick={onSaveFuelInfo} children="Сохранить"></MyButton>
-        </div>
       </form>
     </section>
   )

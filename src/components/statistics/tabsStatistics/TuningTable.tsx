@@ -35,7 +35,7 @@ const TuningTable = () => {
               </tbody>
             </table>
           ) : (
-            <h1 style={{ margin: '15px 0' }}>Нет данных о тюнинге</h1>
+            <h2 className='mt-1r'>Нет данных о тюнинге</h2>
           )
         }
         </div>

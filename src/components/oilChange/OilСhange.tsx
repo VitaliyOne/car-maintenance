@@ -93,8 +93,8 @@ const OilСhange = () => {
 
     return (
         <section>
-            <time className="time"><img src={OilLamp} alt="OilLamp" style={{ height: "20px" }} /> &nbsp;{dateTime}</time>
-            <form style={{ marginTop: "10px" }}>
+            <time className="time"><img src={OilLamp} alt="OilLamp" className="icon" /> &nbsp;{dateTime}</time>
+            <form className="mt-10">
                 <div className="infoOilСhange">
                     <InputAdornment onChange={onInputChange} name="mileage" value={formData.mileage} placeholder="Пробег" type="number" span="км"></InputAdornment>
                     <InputAdornment onChange={onInputChange} name="price" value={formData.price} placeholder="Цена" type="number" span="руб"></InputAdornment>
@@ -112,13 +112,11 @@ const OilСhange = () => {
                     </MySelect>
                     <MyInput onChange={onInputChange} name="comment" value={formData.comment} placeholder="Коментарий" type="text" autoComplete="off"></MyInput>
                 </div>
-                <div style={{ marginTop: "10px" }}>
                     <MyButton onClick={onSaveOilChangeInfo} children="Сохранить"></MyButton>
-                </div>
             </form>
-            <div style={{ textAlign: "left", marginTop: "10px", fontSize: "13px" }}>
+            <div className="oilChangeInterval">
                 <p>Рекомендуемый интервал замены масла легковых авто:</p>
-                <ul style={{ marginLeft: "20px" }}>
+                <ul className="ml-20">
                     <li>каждые 5 - 7 тыс.км - в городе;</li>
                     <li>каждые 6 - 8 тыс.км - смешанный цикл;</li>
                     <li>каждые 8 - 10 тыс.км - по трассе.</li>

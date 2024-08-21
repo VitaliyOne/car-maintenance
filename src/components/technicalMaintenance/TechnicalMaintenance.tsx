@@ -35,7 +35,7 @@ const TechnicalMaintenance = () => {
 
   return (
     <section>
-      <time className="time"><img src={Maintenance} alt="Maintenance" style={{ height: "25px" }} /> &nbsp;{dateTime}</time>
+      <time className="time"><img src={Maintenance} alt="Maintenance" className="icon" /> &nbsp;{dateTime}</time>
       <form>
         <div className="infoOilСhange">
           <MyInput onChange={onInputChange} name="typeService" value={formData.typeService} placeholder="Вид обслуживания" type="text"></MyInput>

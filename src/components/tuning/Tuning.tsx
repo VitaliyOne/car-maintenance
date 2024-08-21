@@ -36,7 +36,7 @@ const Tuning = () => {
 
   return (
     <div>
-      <time className="time"><img src={TuningIcon} alt="TuningIcon" style={{ height: "30px" }} /> &nbsp;{dateTime}</time>
+      <time className="time"><img src={TuningIcon} alt="TuningIcon" className="icon"/> &nbsp;{dateTime}</time>
       <form>
         <div className="infoOilСhange">
           <MyInput onChange={onInputChange} name="typeTuning" value={formData.typeTuning} placeholder="Вид тюнинга" type="text"></MyInput>

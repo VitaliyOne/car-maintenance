@@ -32,7 +32,7 @@ const FuelFillingTable = () => {
             </tbody>
           </table>
         ) : (
-          <h1 style={{ margin: '15px 0' }}>Нет данных о заправках</h1>
+          <h2 className='mt-1r'>Нет данных о заправках</h2>
         )
       }
     </div>

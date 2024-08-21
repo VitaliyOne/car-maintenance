@@ -32,7 +32,7 @@ const OilСhangeTable = () => {
               </tbody>
             </table>
           ) : (
-            <h1 style={{ margin: '15px 0' }}>Нет данных о замене масла</h1>
+            <h2 className='mt-1r'>Нет данных о замене масла</h2>
           )
         }
       </div>

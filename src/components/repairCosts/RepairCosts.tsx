@@ -34,7 +34,7 @@ const RepairCosts = () => {
 
   return (
     <section>
-      <time className="time"><img src={IconRepairCosts} alt="IconRepairCosts" style={{ height: "30px" }} /> &nbsp;{dateTime}</time>
+      <time className="time"><img src={IconRepairCosts} alt="iconRepairCosts" className="icon" /> &nbsp;{dateTime}</time>
       <form>
         <div className="infoOilСhange">
           <MyInput onChange={onInputChange} name="typeRepair" value={formData.typeRepair} placeholder="Вид ремонта" type="text"></MyInput>

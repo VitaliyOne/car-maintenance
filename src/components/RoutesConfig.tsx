@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import FuelFilling from './fuelFilling/FuelFilling';
 import OilСhange from './oilChange/OilСhange';
 import RepairCosts from './repairCosts/RepairCosts';
@@ -16,7 +16,7 @@ const RoutesConfig = () => {
       <Route path="/technical-maintenance" element={<TechnicalMaintenance />} />
       <Route path="/statistics" element={<Statistics />} />
       <Route path="/tuning" element={<Tuning />} />
-      <Route path="/" element={<FuelFilling />} />
+      <Route path="/" element={<Navigate to="/fuel-filling" />} />
     </Routes>
   );
 };

@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import FuelFilling from './fuelFilling/FuelFilling';
-import OilСhange from './oilChange/OilСhange';
+import OilChange from './oilChange/OilChange';
 import RepairCosts from './repairCosts/RepairCosts';
 import Statistics from './statistics/Statistics';
 import TechnicalMaintenance from './technicalMaintenance/TechnicalMaintenance';
@@ -10,7 +10,7 @@ const RoutesConfig = () => {
   return (
     <Routes>
       <Route path="/fuel-filling" element={<FuelFilling />} />
-      <Route path="/oil-change" element={<OilСhange />} />
+      <Route path="/oil-change" element={<OilChange />} />
       <Route path="/repair-costs" element={<RepairCosts />} />
       <Route path="/technical-maintenance" element={<TechnicalMaintenance />} />
       <Route path="/statistics" element={<Statistics />} />

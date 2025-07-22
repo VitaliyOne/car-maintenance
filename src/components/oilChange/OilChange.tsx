@@ -11,7 +11,7 @@ import { addOilChangeInfo } from '../../store/reducers/oil/slice';
 import useAppSelector from '../../hooks/useAppSelector';
 import { generateUniqueId } from '../uniqId';
 
-const OilСhange = () => {
+const OilChange = () => {
   const dateTime = useAppSelector((state) => state.localTime.time);
   const [oilViscosity, setOilViscostyValue] = useState<string>('');
   const [oilType, settypeOilValue] = useState<string>('');
@@ -154,4 +154,4 @@ const OilСhange = () => {
   );
 };
 
-export default OilСhange;
+export default OilChange;

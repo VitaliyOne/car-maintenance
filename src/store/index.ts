@@ -6,8 +6,10 @@ import localTimeSlice from './reducers/localTime/slice';
 import repairCostsSlice from './reducers/repair/slice';
 import technicalMaintenancesSlice from './reducers/technicalMaintenance/slice';
 import tuningSlice from './reducers/tuning/slice';
+import authSlice from './reducers/auth/slice';
 
 const rootReducer = combineReducers({
+  auth: authSlice.reducer,
   cars: carsSlice.reducer,
   fuels: fuelSlice.reducer,
   oilChange: oilChangeSlice.reducer,

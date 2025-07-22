@@ -1,5 +1,5 @@
 import { ChangeEvent } from 'react';
-import classes from "./MyTextarea.module.css";
+import classes from './MyTextarea.module.css';
 
 interface MyTextareaProps {
   placeholder: string;
@@ -18,6 +18,6 @@ const MyTextarea = (props: MyTextareaProps) => {
       onChange={props.onChange}
     />
   );
-}
+};
 
 export default MyTextarea;

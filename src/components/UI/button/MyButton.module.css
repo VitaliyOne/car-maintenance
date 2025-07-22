@@ -1,21 +1,21 @@
 .myButton {
-    padding: 5px 15px;
-    color: rgb(13, 13, 14);
-    font-size: 15px;
-    background: transparent;
-    cursor: pointer;
-    border: 1px solid rgba(51, 51, 51, 0.2);
-    border-radius: 5px;
-    /* border:  none; */
-    font-family: 'Roboto', sans-serif;
-    transition: transform 200ms ease;
+  padding: 5px 15px;
+  color: rgb(13, 13, 14);
+  font-size: 15px;
+  background: transparent;
+  cursor: pointer;
+  border: 1px solid rgba(51, 51, 51, 0.2);
+  border-radius: 5px;
+  /* border:  none; */
+  font-family: 'Roboto', sans-serif;
+  transition: transform 200ms ease;
 }
 
-.myButton:hover{
-    background: rgba(51, 51, 51, 0.2);
-    color: #000;
+.myButton:hover {
+  background: rgba(51, 51, 51, 0.2);
+  color: #000;
 }
 
 .myButton:active {
-    background: rgba(51, 51, 51, 0.2);
+  background: rgba(51, 51, 51, 0.2);
 }

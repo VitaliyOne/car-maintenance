@@ -1,4 +1,4 @@
-import { TuningState } from "./types";
+import { TuningState } from './types';
 
 export const REDUCER_PATH = 'tuning';
 

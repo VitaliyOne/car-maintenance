@@ -1,15 +1,13 @@
-import RoutesConfig from "./RoutesConfig";
-import NavMenu from "./NavMenu";
-
+import RoutesConfig from './RoutesConfig';
+import NavMenu from './NavMenu';
 
 const CarMaintenanceMenu = () => {
-
   return (
     <main className="carMaintenanceMenu">
-    <NavMenu/>
-    <RoutesConfig />
-  </main>
+      <NavMenu />
+      <RoutesConfig />
+    </main>
   );
-}
+};
 
-export default CarMaintenanceMenu
+export default CarMaintenanceMenu;

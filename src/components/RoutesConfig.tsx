@@ -6,7 +6,6 @@ import Statistics from './statistics/Statistics';
 import TechnicalMaintenance from './technicalMaintenance/TechnicalMaintenance';
 import Tuning from './tuning/Tuning';
 
-
 const RoutesConfig = () => {
   return (
     <Routes>

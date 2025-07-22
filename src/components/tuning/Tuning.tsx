@@ -20,38 +20,82 @@ const Tuning = () => {
   const onSaveTuningInfo = () => {
     dispatch(
       addTuningInfo({
-        ...formData, id: generateUniqueId()
+        ...formData,
+        id: generateUniqueId()
       })
     );
 
-    resetFormData()
-  }
+    resetFormData();
+  };
 
   const resetFormData = () => setFormData(DEFAULT_TUNING_FORM_DATA);
 
-  const onInputChange: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> = (event) => {
+  const onInputChange: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> = (
+    event
+  ) => {
     const { name, value } = event.target;
     setFormData((state) => ({ ...state, [name]: value }));
   };
 
   return (
     <div>
-      <time className="time"><img src={TuningIcon} alt="TuningIcon" className="icon"/> &nbsp;{dateTime}</time>
+      <time className="time">
+        <img src={TuningIcon} alt="TuningIcon" className="icon" /> &nbsp;{dateTime}
+      </time>
       <form>
         <div className="infoOilСhange">
-          <MyInput onChange={onInputChange} name="typeTuning" value={formData.typeTuning} placeholder="Вид тюнинга" type="text"></MyInput>
-          <InputAdornment onChange={onInputChange} name="price" value={formData.price} placeholder="Сумма затрат" type="number" span="руб"></InputAdornment>
-          <InputAdornment onChange={onInputChange} name="mileage" value={formData.mileage} placeholder="Пробег" type="number" span="км"></InputAdornment>
-          <InputAdornment onChange={onInputChange} name="acceleration1" value={formData.acceleration1} placeholder="Разгон 0-100" type="number" span="сек"></InputAdornment>
-          <InputAdornment onChange={onInputChange} name="acceleration12" value={formData.acceleration12} placeholder="Разгон 10-20" type="number" span="сек"></InputAdornment>
+          <MyInput
+            onChange={onInputChange}
+            name="typeTuning"
+            value={formData.typeTuning}
+            placeholder="Вид тюнинга"
+            type="text"
+          ></MyInput>
+          <InputAdornment
+            onChange={onInputChange}
+            name="price"
+            value={formData.price}
+            placeholder="Сумма затрат"
+            type="number"
+            span="руб"
+          ></InputAdornment>
+          <InputAdornment
+            onChange={onInputChange}
+            name="mileage"
+            value={formData.mileage}
+            placeholder="Пробег"
+            type="number"
+            span="км"
+          ></InputAdornment>
+          <InputAdornment
+            onChange={onInputChange}
+            name="acceleration1"
+            value={formData.acceleration1}
+            placeholder="Разгон 0-100"
+            type="number"
+            span="сек"
+          ></InputAdornment>
+          <InputAdornment
+            onChange={onInputChange}
+            name="acceleration12"
+            value={formData.acceleration12}
+            placeholder="Разгон 10-20"
+            type="number"
+            span="сек"
+          ></InputAdornment>
         </div>
         <div className="infoOilСhange">
-          <MyTextarea onChange={onInputChange} name="description" value={formData.description} placeholder='Описание' />
+          <MyTextarea
+            onChange={onInputChange}
+            name="description"
+            value={formData.description}
+            placeholder="Описание"
+          />
         </div>
         <MyButton onClick={onSaveTuningInfo} children="Сохранить"></MyButton>
       </form>
     </div>
-  )
-}
+  );
+};
 
 export default Tuning;

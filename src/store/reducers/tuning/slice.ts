@@ -1,8 +1,6 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { INITIAL_STATE, REDUCER_PATH } from "./const";
-import { ITuningForm } from "../../../components/tuning/types";
-
-
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { INITIAL_STATE, REDUCER_PATH } from './const';
+import { ITuningForm } from '../../../components/tuning/types';
 
 const tuningSlice = createSlice({
   name: REDUCER_PATH,
@@ -24,8 +22,9 @@ const tuningSlice = createSlice({
       state.tuning = state.tuning.filter((item) => item.id !== tuningId);
     }
   }
-})
+});
 
-export const { addTuningInfo, deleteTuningInfo, updateTuningInfo, removeTuningInfo } = tuningSlice.actions;
+export const { addTuningInfo, deleteTuningInfo, updateTuningInfo, removeTuningInfo } =
+  tuningSlice.actions;
 
 export default tuningSlice;

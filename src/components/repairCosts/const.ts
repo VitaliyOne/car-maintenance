@@ -1,4 +1,4 @@
-import { IRepairCostsForm } from "./types";
+import { IRepairCostsForm } from './types';
 
 export const DEFAULT_REPAIR_COSTS_FORM_DATA: IRepairCostsForm = {
   id: '',
@@ -10,4 +10,4 @@ export const DEFAULT_REPAIR_COSTS_FORM_DATA: IRepairCostsForm = {
   price: 0,
   mileage: 0,
   comment: ''
-}
+};

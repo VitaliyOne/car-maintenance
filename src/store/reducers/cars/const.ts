@@ -1,4 +1,4 @@
-import { CarsState } from "./types";
+import { CarsState } from './types';
 
 export const REDUCER_PATH = 'cars';
 

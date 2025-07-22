@@ -7,7 +7,6 @@ import repairCostsSlice from './reducers/repair/slice';
 import technicalMaintenancesSlice from './reducers/technicalMaintenance/slice';
 import tuningSlice from './reducers/tuning/slice';
 
-
 const rootReducer = combineReducers({
   cars: carsSlice.reducer,
   fuels: fuelSlice.reducer,

@@ -1,19 +1,19 @@
-.myInput{
-    padding: 5px 10px;
-    border: 1px solid rgba(51, 51, 51, 0.2);
-    border-radius: 5px;
-    font-family: 'Roboto', sans-serif;
-    outline:none;
-    font-size: 15px;
-    width: 100%;
+.myInput {
+  padding: 5px 10px;
+  border: 1px solid rgba(51, 51, 51, 0.2);
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  outline: none;
+  font-size: 15px;
+  width: 100%;
 }
 
-.myInput:hover{
-    background: rgba(51, 51, 51, 0.2);
+.myInput:hover {
+  background: rgba(51, 51, 51, 0.2);
 }
 
-.myInput:focus{
-    background: white;
+.myInput:focus {
+  background: white;
 }
 
 /* @media (max-width: 600px) {

@@ -1,4 +1,4 @@
-import { localTimeState } from "./types";
+import { localTimeState } from './types';
 
 export const REDUCER_PATH = 'localTime';
 

@@ -1,4 +1,4 @@
-import { IOilChangeForm } from "../../../components/oilChange/types";
+import { IOilChangeForm } from '../../../components/oilChange/types';
 
 export interface OilСhangesState {
   oilChanges: IOilChangeForm[];

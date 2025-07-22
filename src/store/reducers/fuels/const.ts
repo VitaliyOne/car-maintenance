@@ -1,4 +1,4 @@
-import { FuelsState } from "./types";
+import { FuelsState } from './types';
 
 export const REDUCER_PATH = 'fuels';
 

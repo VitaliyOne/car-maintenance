@@ -1,4 +1,4 @@
-import { TechnicalMaintenanceState } from "./types";
+import { TechnicalMaintenanceState } from './types';
 
 export const REDUCER_PATH = 'technicalMaintenance';
 

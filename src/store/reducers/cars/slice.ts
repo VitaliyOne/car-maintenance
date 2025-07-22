@@ -1,6 +1,6 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { INITIAL_STATE, REDUCER_PATH } from "./const";
-import { Cars } from "../../../types";
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { INITIAL_STATE, REDUCER_PATH } from './const';
+import { Cars } from '../../../types';
 
 const carsSlice = createSlice({
   name: REDUCER_PATH,
@@ -13,7 +13,7 @@ const carsSlice = createSlice({
       state.selectedCarId = action.payload;
     },
     deleteCar: (state, action: PayloadAction<string>) => {
-      state.cars = state.cars.filter(car => car.id !== action.payload);
+      state.cars = state.cars.filter((car) => car.id !== action.payload);
       if (state.selectedCarId === action.payload) {
         state.selectedCarId = state.cars[0]?.id || null;
       }
@@ -24,7 +24,7 @@ const carsSlice = createSlice({
       if (car) Object.assign(car, payload);
     }
   }
-})
+});
 
 export const { addCar, selectCar, updateCar, deleteCar } = carsSlice.actions;
 

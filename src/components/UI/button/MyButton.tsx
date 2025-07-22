@@ -1,4 +1,4 @@
-import classes from "./MyButton.module.css";
+import classes from './MyButton.module.css';
 
 interface MyButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   children: string;

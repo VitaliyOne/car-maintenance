@@ -1,3 +1,3 @@
-import technicalMaintenancesSlice from "./slice";
+import technicalMaintenancesSlice from './slice';
 
 export default technicalMaintenancesSlice.reducer;

@@ -1,3 +1,3 @@
-import repairCostsSlice from "./slice";
+import repairCostsSlice from './slice';
 
 export default repairCostsSlice.reducer;

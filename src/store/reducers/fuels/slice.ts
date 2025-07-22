@@ -1,7 +1,6 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { INITIAL_STATE, REDUCER_PATH } from "./const";
-import { IFuelForm } from "../../../components/fuelFilling/types";
-
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { INITIAL_STATE, REDUCER_PATH } from './const';
+import { IFuelForm } from '../../../components/fuelFilling/types';
 
 const fuelSlice = createSlice({
   name: REDUCER_PATH,
@@ -23,7 +22,7 @@ const fuelSlice = createSlice({
       state.fuels = state.fuels.filter((item) => item.id !== fuelId);
     }
   }
-})
+});
 
 export const { addFuelInfo, deleteFuelInfo, updateFuelInfo, removeFuelInfo } = fuelSlice.actions;
 

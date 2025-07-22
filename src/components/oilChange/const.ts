@@ -1,4 +1,4 @@
-import { IOilChangeForm } from "./types";
+import { IOilChangeForm } from './types';
 
 export const DEFAULT_OIL_FORM_DATA: IOilChangeForm = {
   id: '',
@@ -8,4 +8,4 @@ export const DEFAULT_OIL_FORM_DATA: IOilChangeForm = {
   oilViscosity: '',
   oilType: '',
   comment: ''
-}
+};

@@ -1,6 +1,6 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { INITIAL_STATE, REDUCER_PATH } from "./const";
-import { IRepairCostsForm } from "../../../components/repairCosts/types";
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { INITIAL_STATE, REDUCER_PATH } from './const';
+import { IRepairCostsForm } from '../../../components/repairCosts/types';
 
 const repairCostsSlice = createSlice({
   name: REDUCER_PATH,
@@ -14,7 +14,7 @@ const repairCostsSlice = createSlice({
     },
     updateRepairCostsInfo: (state, action: PayloadAction<IRepairCostsForm>) => {
       const { payload } = action;
-      const repairCost = state.repairCosts
+      const repairCost = state.repairCosts;
       repairCost.find((item) => item.id === payload.id);
       if (repairCost) Object.assign(repairCost, payload);
     },
@@ -23,8 +23,13 @@ const repairCostsSlice = createSlice({
       state.repairCosts = state.repairCosts.filter((item) => item.id !== repairCostId);
     }
   }
-})
+});
 
-export const { addRepairCostsInfo, deleteRepairCostsInfo, updateRepairCostsInfo, removeRepairCostsInfo } = repairCostsSlice.actions;
+export const {
+  addRepairCostsInfo,
+  deleteRepairCostsInfo,
+  updateRepairCostsInfo,
+  removeRepairCostsInfo
+} = repairCostsSlice.actions;
 
 export default repairCostsSlice;

@@ -1,4 +1,4 @@
-import { IFuelForm } from "./types";
+import { IFuelForm } from './types';
 
 export const DEFAULT_FUEL_FORM_DATA: IFuelForm = {
   id: '',
@@ -7,4 +7,4 @@ export const DEFAULT_FUEL_FORM_DATA: IFuelForm = {
   price: 0,
   mileage: '',
   comment: ''
-}
+};

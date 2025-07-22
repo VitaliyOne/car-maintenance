@@ -1,4 +1,4 @@
-import { OilСhangesState } from "./types";
+import { OilСhangesState } from './types';
 
 export const REDUCER_PATH = 'oilChange';
 

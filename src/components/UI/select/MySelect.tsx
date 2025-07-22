@@ -1,4 +1,4 @@
-import classes from "./MySelect.module.css";
+import classes from './MySelect.module.css';
 
 interface Select {
   defaultValue: string;

@@ -1,12 +1,18 @@
 import RoutesConfig from './RoutesConfig';
 import NavMenu from './NavMenu';
+import Footer from './Footer';
+import Header from './Header';
 
 const CarMaintenanceMenu = () => {
   return (
-    <main className="carMaintenanceMenu">
-      <NavMenu />
-      <RoutesConfig />
-    </main>
+    <>
+      <Header />
+      <main className="carMaintenanceMenu">
+        <NavMenu />
+        <RoutesConfig />
+      </main>
+      <Footer />
+    </>
   );
 };
 
